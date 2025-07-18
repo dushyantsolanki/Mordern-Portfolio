@@ -1,0 +1,110 @@
+import { ArrowDownToLine, Send } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+
+const About = () => {
+    const tech = [
+        { name: "Node.js", url: "https://www.svgrepo.com/show/378837/node.svg" },
+        { name: "JavaScript", url: "https://www.svgrepo.com/show/303206/javascript-logo.svg" },
+        { name: "React", url: "https://www.svgrepo.com/show/452092/react.svg" },
+        { name: "HTML5", url: "https://www.svgrepo.com/show/452228/html-5.svg" },
+        { name: "CSS3", url: "https://www.svgrepo.com/show/452185/css-3.svg" },
+        { name: "Tailwind", url: "https://www.svgrepo.com/show/374118/tailwind.svg" },
+        { name: "Express.js", url: "https://www.svgrepo.com/show/330398/express.svg" },
+        { name: "Fastify", url: "https://www.svgrepo.com/show/353729/fastify-icon.svg" },
+        { name: "Socket.io", url: "https://socket.io/images/logo-dark.svg" },
+        { name: "Mongo DB", url: "https://www.svgrepo.com/show/373845/mongo.svg" },
+        { name: "Next.js", url: "https://www.svgrepo.com/show/378440/nextjs-fill.svg" },
+        { name: "Git", url: "https://www.svgrepo.com/show/452210/git.svg" },
+        { name: "Material UI", url: "https://www.svgrepo.com/show/354048/material-ui.svg" },
+        { name: "TypeScript", url: "https://www.svgrepo.com/show/354478/typescript-icon.svg" },
+        { name: "Linux", url: "https://www.svgrepo.com/show/448236/linux.svg" },
+        { name: "Firebase", url: "https://www.svgrepo.com/show/353735/firebase.svg" },
+    ];
+    return (
+
+        <article >
+
+            <header className='mb-4'>
+
+                <h1 className='text-2xl font-semibold mb-3'> About Me </h1>
+                <div className='h-1 w-12 bg-green-400 rounded-md'></div>
+
+            </header>
+
+            <section className="mb-8">
+                <div className='flex items-center lg:items-start justify-between flex-col-reverse lg:flex-row '>
+                    <div className='box-border pt-8 pr-4 lg:pr-36'>
+                        <p>
+                            I'm Dushyant Solanki, a passionate MERN Stack Developer with 10 months of hands-on experience crafting responsive and scalable web applications. I specialize in build
+                        </p>
+                        <br />
+                        <p>
+                            I enjoy creating clean, user-friendly UIs with Tailwind CSS, Material UI, and Styled Components. On the backend, I’ve worked with Express, Fastify, and RESTful APIs, ensuring performance and maintainability. I thrive in team environments, value clean code, and love turning ideas into working products.
+                        </p>
+
+                        <div className='my-8 flex gap-2'>
+
+                            <a
+                                href="/Dushyant_Mern_Dev_resume.pdf"
+                                download
+                                className="relative w-34 py-2 pl-3 pr-8 rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"
+                            >
+                                <span><ArrowDownToLine className="h-4 w-4 text-green-500" /></span>
+                                Resume
+                            </a>
+                            <Link href='/contact' className="relative w-38 py-2 pl-3  rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"> <span><Send className="h-4 w-4 text-green-500" /></span>
+                                Contact Me</Link>
+
+
+                        </div>
+                    </div>
+                    <div>
+                        <div className="w-64 h-64 bg-white/10 rounded-2xl flex items-center justify-center mb-4 text-4xl">
+                            <Image src='/my-avatar.png' alt="Profile Picture" height={600} width={600} />
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+
+            <header className='mb-8'>
+                <h1 className='text-2xl font-semibold mb-3'> Technology </h1>
+            </header>
+
+            <section className=' flex gap-8 flex-wrap'>
+
+                <TooltipProvider >
+                    <div className="flex flex-wrap gap-2 lg:gap-6 justify-center lg:justify-start">
+                        {tech.map((item, index) => (
+                            <Tooltip key={index}>
+                                <TooltipTrigger asChild>
+                                    <div className="relative flex items-center justify-center w-36 p-4 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
+                                        <Image width={70} height={70} src={item.url} alt={item.name} />
+                                    </div>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>{item.name}</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        ))}
+                    </div>
+                </TooltipProvider>
+
+
+
+
+            </section>
+
+
+        </article >
+
+    )
+}
+
+export default About
