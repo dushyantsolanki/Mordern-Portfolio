@@ -33,9 +33,9 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: "/my-avatar.png",
-        shortcut: "/my-avatar.png",
-        apple: "/my-avatar.png",
+        icon: "/myavatar.png",
+        shortcut: "/myavatar.png",
+        apple: "/myavatar.png",
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         siteName: "Portfolio of Dushyant Solanki",
         images: [
             {
-                url: "/my-avatar.png", // Make sure this exists in /public
+                url: "/myavatar.png", // Make sure this exists in /public
                 width: 1200,
                 height: 630,
                 alt: "Dushyant Solanki - MERN Developer",
@@ -121,7 +121,7 @@ const About = () => {
                     </div>
                     <div>
                         <div className="w-64 h-64 bg-white/10 rounded-2xl flex items-center justify-center mb-4 text-4xl">
-                            <Image src='/my-avatar.png' alt="Profile Picture" height={600} width={600} />
+                            <Image src='/myavatar.png' alt="Profile Picture" height={600} width={600} />
                         </div>
 
 

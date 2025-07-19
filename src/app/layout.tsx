@@ -21,7 +21,7 @@ const poppins = Poppins({
 const profileData = {
   name: "Dushyant Solanki",
   title: "Full Stack Developer",
-  avatar: "/my-avatar.png",
+  avatar: "/myavatar.png",
   email: "dushyantsolanki.dev@gmail.com",
   phone: "+91 7823057936",
   birthday: "Sept 22, 2002",

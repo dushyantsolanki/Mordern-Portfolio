@@ -30,9 +30,9 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: "/my-avatar.png",
-        shortcut: "/my-avatar.png",
-        apple: "/my-avatar.png",
+        icon: "/myavatar.png",
+        shortcut: "/myavatar.png",
+        apple: "/myavatar.png",
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         siteName: "Portfolio of Dushyant Solanki",
         images: [
             {
-                url: "/my-avatar.png",
+                url: "/myavatar.png",
                 width: 1200,
                 height: 630,
                 alt: "Dushyant Solanki - Contact Page Open Graph Image",
