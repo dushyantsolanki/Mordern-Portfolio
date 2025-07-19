@@ -1,5 +1,62 @@
 import ContactUs from '@/components/ContactUs'
 import React from 'react'
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Contact | Dushyant Solanki - MERN Stack Developer",
+    description:
+        "Get in touch with Dushyant Solanki, a MERN Stack Developer specializing in React, Node.js, MongoDB, and responsive UI development. Available for freelance work, collaborations, and tech projects.",
+    keywords: [
+        "Dushyant Solanki",
+        "Portfolio",
+        'Modern Portfolio',
+        "Contact MERN Developer",
+        "Contact React Developer",
+        "MERN Stack Developer",
+        "Node.js Developer",
+        "Full Stack Developer",
+        "Freelance Web Developer",
+        "Next.js Portfolio",
+    ],
+    creator: "Dushyant Solanki",
+    publisher: "Dushyant Solanki",
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
+    },
+    icons: {
+        icon: "/my-avatar.png",
+        shortcut: "/my-avatar.png",
+        apple: "/my-avatar.png",
+    },
+    metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
+    alternates: {
+        canonical: "https://mordern-portfolio-sandy.vercel.app/contact",
+    },
+    openGraph: {
+        title: "Contact | Dushyant Solanki - MERN Stack Developer",
+        description:
+            "Looking to collaborate or hire? Contact Dushyant Solanki, a full-stack MERN Developer with skills in React, Next.js, Node.js, and MongoDB.",
+        url: "https://mordern-portfolio-sandy.vercel.app/contact",
+        siteName: "Portfolio of Dushyant Solanki",
+        images: [
+            {
+                url: "/my-avatar.png",
+                width: 1200,
+                height: 630,
+                alt: "Dushyant Solanki - Contact Page Open Graph Image",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+
+};
 
 const Contact = () => {
     return (
@@ -13,7 +70,7 @@ const Contact = () => {
             </header>
 
             <section className="mb-4">
-                <section className="relative h-[500px] w-full rounded-2xl mb-[30px] border border-[#383838] overflow-hidden" >
+                <section className="relative h-[400px] lg:h-[500px]  w-full rounded-2xl mb-[30px] border border-[#383838] overflow-hidden" >
                     <figure className='h-full'>
 
                         <iframe

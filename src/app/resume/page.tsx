@@ -1,5 +1,63 @@
 import { Briefcase, GraduationCap } from 'lucide-react'
 import React from 'react'
+import type { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+    title: "Resume | Dushyant Solanki - MERN Stack Developer",
+    description:
+        "View the professional resume of Dushyant Solanki, a MERN Stack Developer skilled in React, Node.js, Next.js, and MongoDB. Explore experience, skills, and education.",
+    keywords: [
+        "Dushyant Solanki Resume",
+        "Portfolio",
+        'Modern Portfolio',
+        "MERN Stack Developer Resume",
+        "React Developer Resume",
+        "Full Stack Developer CV",
+        "JavaScript Developer Resume",
+        "Web Developer Resume",
+        "Next.js Developer Resume",
+        "Node.js Resume",
+    ],
+    creator: "Dushyant Solanki",
+    publisher: "Dushyant Solanki",
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
+    },
+    icons: {
+        icon: "/my-avatar.png",
+        shortcut: "/my-avatar.png",
+        apple: "/my-avatar.png",
+    },
+    metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
+    alternates: {
+        canonical: "https://mordern-portfolio-sandy.vercel.app/resume",
+    },
+    openGraph: {
+        title: "Resume | Dushyant Solanki - MERN Stack Developer",
+        description:
+            "Explore the resume of Dushyant Solanki, a full-stack JavaScript developer specializing in the MERN stack, including React, Next.js, Node.js, and MongoDB.",
+        url: "https://mordern-portfolio-sandy.vercel.app/resume",
+        siteName: "Portfolio of Dushyant Solanki",
+        images: [
+            {
+                url: "/my-avatar.png", // Recommended: upload this image (1200x630px)
+                width: 1200,
+                height: 630,
+                alt: "Dushyant Solanki Resume Preview",
+            },
+        ],
+        locale: "en_US",
+        type: "profile",
+    },
+
+};
 
 const Resume = () => {
     const skills = [

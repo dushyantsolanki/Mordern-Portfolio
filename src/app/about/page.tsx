@@ -3,6 +3,63 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About | Dushyant Solanki - MERN Stack Developer",
+    description:
+        "Learn more about Dushyant Solanki, a MERN Stack Developer with expertise in React, Next.js, Node.js, and MongoDB. Discover his background, experience, and passion for building modern web applications.",
+    keywords: [
+        "Dushyant Solanki",
+        "Portfolio",
+        'Modern Portfolio',
+        "About MERN Developer",
+        "MERN Stack Developer",
+        "React Developer",
+        "Full Stack JavaScript Developer",
+        "Node.js Developer",
+        "Web Developer Portfolio",
+        "Next.js Developer",
+    ],
+    creator: "Dushyant Solanki",
+    publisher: "Dushyant Solanki",
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
+    },
+    icons: {
+        icon: "/my-avatar.png",
+        shortcut: "/my-avatar.png",
+        apple: "/my-avatar.png",
+    },
+    metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
+    alternates: {
+        canonical: "https://mordern-portfolio-sandy.vercel.app/about",
+    },
+    openGraph: {
+        title: "About | Dushyant Solanki - MERN Stack Developer",
+        description:
+            "Meet Dushyant Solanki, a passionate MERN Stack Developer skilled in building scalable web apps using React, Node.js, and MongoDB.",
+        url: "https://mordern-portfolio-sandy.vercel.app/about",
+        siteName: "Portfolio of Dushyant Solanki",
+        images: [
+            {
+                url: "/my-avatar.png", // Make sure this exists in /public
+                width: 1200,
+                height: 630,
+                alt: "Dushyant Solanki - MERN Developer",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+
+};
 
 
 const About = () => {
@@ -37,9 +94,9 @@ const About = () => {
 
             <section className="mb-8">
                 <div className='flex items-center lg:items-start justify-between flex-col-reverse lg:flex-row '>
-                    <div className='box-border pt-8 pr-4 lg:pr-36'>
+                    <div className='box-border pt-8  lg:pr-36'>
                         <p>
-                            I'm Dushyant Solanki, a passionate MERN Stack Developer with 10 months of hands-on experience crafting responsive and scalable web applications. I specialize in build
+                            I'm Dushyant Solanki, a passionate MERN Stack Developer with 10 months of hands on experience crafting responsive and scalable web applications. I specialize in build
                         </p>
                         <br />
                         <p>
@@ -80,7 +137,7 @@ const About = () => {
             <section className=' flex gap-8 flex-wrap'>
 
                 <TooltipProvider >
-                    <div className="flex flex-wrap gap-2 lg:gap-6 justify-center lg:justify-start">
+                    <div className="flex flex-wrap gap-8 lg:gap-6 justify-center lg:justify-start">
                         {tech.map((item, index) => (
                             <Tooltip key={index}>
                                 <TooltipTrigger asChild>
