@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dushyant Solanki | MERN Stack Developer",
-    short_name: "Dushyant Portfolio",
+    name: "D Port",
+    short_name: "D Port",
     description:
       "Portfolio of Dushyant Solanki, a MERN Stack Developer with experience in React, Next.js, Node, MongoDB, and real-time features using Socket.IO.",
     start_url: "/",
