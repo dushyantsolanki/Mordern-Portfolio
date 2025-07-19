@@ -30,9 +30,9 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: "/myavatar.png",
-        shortcut: "/myavatar.png",
-        apple: "/myavatar.png",
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/favicon.ico",
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {

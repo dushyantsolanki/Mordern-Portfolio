@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About | Dushyant Solanki - MERN Stack Developer",
+    manifest: '/manifest.webmanifest',
     description:
         "Learn more about Dushyant Solanki, a MERN Stack Developer with expertise in React, Next.js, Node.js, and MongoDB. Discover his background, experience, and passion for building modern web applications.",
     keywords: [
@@ -33,9 +34,9 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: "/myavatar.png",
-        shortcut: "/myavatar.png",
-        apple: "/myavatar.png",
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/favicon.ico",
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
