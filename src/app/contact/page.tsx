@@ -31,8 +31,7 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: "/myavatar.png",
-        shortcut: "/myavatar.png",
-        apple: "/myavatar.png",
+
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
