@@ -107,14 +107,14 @@ const About = () => {
                         <div className='my-8 flex gap-2'>
 
                             <a
-                                href="/Dushyant_Mern_Dev_resume.pdf"
+                                href="/Resume_Dushyant_.pdf"
                                 download
                                 className="relative w-34 py-2 pl-3 pr-8 rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"
                             >
                                 <span><ArrowDownToLine className="h-4 w-4 text-green-500" /></span>
                                 Resume
                             </a>
-                            <Link href='/contact' className="relative w-38 py-2 pl-3  rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"> <span><Send className="h-4 w-4 text-green-500" /></span>
+                            <Link href='/portfolio/contact' className="relative w-38 py-2 pl-3  rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"> <span><Send className="h-4 w-4 text-green-500" /></span>
                                 Contact Me</Link>
 
 
