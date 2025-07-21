@@ -63,7 +63,7 @@ function Sidebar({ count }: { count: number }) {
                     </div>
                 </div>
 
-                <div className="f hidden lg:flex  justify-center">
+                <div className="hidden lg:flex  justify-center">
                     <div
                         className="text-center w-1/2 text-4xl bg-black/20 border border-white/20 rounded-2xl p-3  shadow-2xl"
                     >
@@ -151,7 +151,7 @@ function MobileHeader({ isExpanded, onToggle, count }: { isExpanded: boolean; on
             </div>
             <div className="relative ">
                 <motion.div
-                    className="lg:hidden fixed top-[400px] right-0 z-50 bg-black/40 border border-white/10 rounded-xl rounded-r-none  pl-2 pr-1 py-2"
+                    className="lg:hidden fixed top-[400px] right-0 z-50 bg-black/40 border border-white/10 rounded-xl rounded-r-none  px-3 py-2"
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5, ease: 'linear' }}
