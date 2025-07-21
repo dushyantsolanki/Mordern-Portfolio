@@ -105,19 +105,19 @@ const Resume = () => {
                             <div className="absolute left-5 -top-6  w-0.5 bg-white/10 h-full "></div>
 
                             <div className="space-y-8">
-
+                                {/* 
                                 <div className="relative pl-12">
                                     <div className="absolute left-[13px] top-2 w-4 h-4 bg-white/30 rounded-full z-10  after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-2 after:h-2 after:bg-green-500 after:rounded-full"></div>
                                     <h3 className="text-xl font-semibold text-white mb-2">Lemolite Technologies LLP</h3>
                                     <p className="text-gray-400 text-sm mb-3">Aug 2024 - Jan 2025, </p>
                                     <span className='text-gray-100 bg-white/5 py-1 px-2 rounded-sm text-sm '>Mern Stack Intern</span>
 
-                                </div>
+                                </div> */}
 
                                 <div className="relative pl-12">
                                     <div className="absolute left-[13px] top-2 w-4 h-4 bg-white/30 rounded-full z-10  after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-2 after:h-2 after:bg-green-500 after:rounded-full"></div>
                                     <h3 className="text-xl font-semibold text-white mb-2">Lemolite Technologies LLP</h3>
-                                    <p className="text-gray-400 text-sm mb-3">Feb 2025 - May 2025 </p>
+                                    <p className="text-gray-400 text-sm mb-3">Aug 2024 - May 2025 </p>
                                     <span className='text-gray-100 bg-white/5 py-1 px-2 rounded-sm text-sm '>Mern Stack Developer</span>
                                     <ul className="mt-4 text-gray-300 leading-relaxed list-disc list-inside space-y-2">
                                         <li>
