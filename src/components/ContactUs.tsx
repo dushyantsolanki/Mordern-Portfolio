@@ -89,10 +89,38 @@ const ContactUs = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`${loading ? 'cursor-not-allowed' : 'cursor-pointer'}  relative  flex justify-center items-center gap-[10px] py-[13px] px-5 rounded-[14px] text-[#07ff45c0] text-[14px] capitalize shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease hover:bg-white/10`}
+                        className={`${loading ? 'cursor-not-allowed' : 'cursor-pointer'} relative flex justify-center items-center gap-[10px] py-[13px] px-5 rounded-[14px] text-[#07ff45c0] text-[14px] capitalize shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease hover:bg-white/10`}
                     >
-                        <Send className='h-5 w-5' />
-                        <span>Send Message</span>
+                        {loading ? (
+                            <div className="flex items-center justify-center">
+                                <svg
+                                    className="animate-spin h-5 w-5 text-[#07ff45c0]"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    ></circle>
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                    ></path>
+                                </svg>
+                                <p className='ml-2'>Loading....</p>
+                            </div>
+                        ) : (
+                            <>
+                                <Send className='h-5 w-5' />
+                                <span>Send Message</span>
+                            </>
+                        )}
                     </button>
                 </div>
             </form>

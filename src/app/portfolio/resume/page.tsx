@@ -111,13 +111,7 @@ const Resume = () => {
                                     <h3 className="text-xl font-semibold text-white mb-2">Lemolite Technologies LLP</h3>
                                     <p className="text-gray-400 text-sm mb-3">Aug 2024 - Jan 2025, </p>
                                     <span className='text-gray-100 bg-white/5 py-1 px-2 rounded-sm text-sm '>Mern Stack Intern</span>
-                                    <p className="mt-4 text-gray-300 leading-relaxed">
-                                        As a Frontend Developer, I create engaging and user-friendly interfaces that bring designs to
-                                        life. I specialize in transforming concepts into responsive web applications using modern
-                                        technologies. Collaborating closely with designers and stakeholders, I ensure a seamless user
-                                        experience. My focus is on delivering clean, efficient code that enhances interactivity and
-                                        performance.
-                                    </p>
+
                                 </div>
 
                                 <div className="relative pl-12">
@@ -125,13 +119,24 @@ const Resume = () => {
                                     <h3 className="text-xl font-semibold text-white mb-2">Lemolite Technologies LLP</h3>
                                     <p className="text-gray-400 text-sm mb-3">Feb 2025 - May 2025 </p>
                                     <span className='text-gray-100 bg-white/5 py-1 px-2 rounded-sm text-sm '>Mern Stack Developer</span>
-                                    <p className="mt-4 text-gray-300 leading-relaxed">
-                                        As a Frontend Developer, I create engaging and user-friendly interfaces that bring designs to
-                                        life. I specialize in transforming concepts into responsive web applications using modern
-                                        technologies. Collaborating closely with designers and stakeholders, I ensure a seamless user
-                                        experience. My focus is on delivering clean, efficient code that enhances interactivity and
-                                        performance.
-                                    </p>
+                                    <ul className="mt-4 text-gray-300 leading-relaxed list-disc list-inside space-y-2">
+                                        <li>
+                                            Developed full-stack web applications using React.js, Next.js, Node.js and MongoDB,
+                                            ensuring responsive design and performance.
+                                        </li>
+                                        <li>
+                                            Built and maintained scalable REST APIs with Express.js and Fastify, and integrated
+                                            Socket.IO for real-time functionality.
+                                        </li>
+                                        <li>
+                                            Designed clean, user-friendly interfaces with Tailwind CSS, Material UI, and Styled
+                                            Components, following modern UX practices.
+                                        </li>
+                                        <li>
+                                            Worked with TypeScript and Git in an Agile environment, focusing on clean code,
+                                            reusability, and collaboration across teams.
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>

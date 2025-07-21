@@ -8,6 +8,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "About | Dushyant Solanki - MERN Stack Developer",
     manifest: '/manifest.webmanifest',
+    verification: {
+        google: "OBn1HWCiR3_f-0rm_1He_vnCyzDe5EVjutjILllFoPs",
+    },
     description:
         "Learn more about Dushyant Solanki, a MERN Stack Developer with expertise in React, Next.js, Node.js, and MongoDB. Discover his background, experience, and passion for building modern web applications.",
     keywords: [
@@ -97,11 +100,15 @@ const About = () => {
                 <div className='flex items-center lg:items-start justify-between flex-col-reverse lg:flex-row '>
                     <div className='box-border pt-8  lg:pr-36'>
                         <p>
-                            I'm Dushyant Solanki, a passionate MERN Stack Developer with 10 months of hands on experience crafting responsive and scalable web applications. I specialize in build
+                            I'm a MERN Stack Developer with 1 year of hands-on experience crafting responsive and scalable web applications. I specialize in both frontend and backend development, with a solid foundation in JavaScript, TypeScript, and modern frameworks like React.js, Next.js, Node.js, and MongoDB.
                         </p>
                         <br />
                         <p>
-                            I enjoy creating clean, user-friendly UIs with Tailwind CSS, Material UI, and Styled Components. On the backend, I’ve worked with Express, Fastify, and RESTful APIs, ensuring performance and maintainability. I thrive in team environments, value clean code, and love turning ideas into working products.
+                            On the backend, I’ve worked with Express and Fastify to build RESTful APIs, while integrating Socket.IO for real-time functionality. On the frontend, I focus on clean, accessible UI development using Tailwind CSS, Material UI, and Styled Components.
+                        </p>
+                        <br />
+                        <p>
+                            I’m passionate about writing clean, maintainable code, collaborating with teams using Git, and continually learning to stay updated with the latest in web development.
                         </p>
 
                         <div className='my-8 flex gap-2'>

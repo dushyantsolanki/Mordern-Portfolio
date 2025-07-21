@@ -1,14 +1,14 @@
 'use client'
 
 
-import { Calendar, Github, Instagram, Linkedin, Mail, MapIcon, Phone, Menu, X } from "lucide-react";
+import { Calendar, Github, Instagram, Linkedin, Mail, MapIcon, Phone, Menu, X, LogInIcon } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-// import { NumberTicker } from "@/components/NumberTiker";
+import { NumberTicker } from "@/components/NumberTiker";
 
 
 const profileData = {
@@ -29,7 +29,7 @@ const navLinks = [
 ];
 
 // Sidebar Component
-function Sidebar() {
+function Sidebar({ count }: { count: number }) {
     return (
         <div className="min-h-screen flex flex-col">
             {/* Profile Header */}
@@ -59,9 +59,20 @@ function Sidebar() {
                         <SocialLink href="https://github.com/dushyantsolanki" icon={Github} />
                         <SocialLink href="https://www.linkedin.com/in/dushyantsolanki/" icon={Linkedin} />
                         <SocialLink href="https://www.instagram.com/dushyantsolanky/" icon={Instagram} />
+                        {/* <SocialLink href="/admin/login" icon={LogInIcon} /> */}
+                    </div>
+                </div>
+
+                <div className="f hidden lg:flex  justify-center">
+                    <div
+                        className="text-center w-1/2 text-4xl bg-black/20 border border-white/20 rounded-2xl p-3  shadow-2xl"
+                    >
+                        <NumberTicker value={count} format="youtube" />
+
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }
@@ -105,7 +116,7 @@ function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
 }
 
 // Mobile Header Component
-function MobileHeader({ isExpanded, onToggle }: { isExpanded: boolean; onToggle: () => void }) {
+function MobileHeader({ isExpanded, onToggle, count }: { isExpanded: boolean; onToggle: () => void, count: number }) {
     return (
         <motion.div
             className="lg:hidden sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10"
@@ -136,6 +147,19 @@ function MobileHeader({ isExpanded, onToggle }: { isExpanded: boolean; onToggle:
                         {isExpanded ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </motion.div>
                 </button>
+
+            </div>
+            <div className="relative ">
+                <motion.div
+                    className="lg:hidden fixed top-[400px] right-0 z-50 bg-black/40 border border-white/10 rounded-xl rounded-r-none  pl-2 pr-1 py-2"
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: 'linear' }}
+                >
+                    <span className="font-medium text-green-500 ">
+                        <NumberTicker value={count} format="youtube" />
+                    </span>
+                </motion.div>
             </div>
 
             {/* Expanded Content */}
@@ -207,6 +231,7 @@ function MobileHeader({ isExpanded, onToggle }: { isExpanded: boolean; onToggle:
                                 <SocialLink href="https://github.com/dushyantsolanki" icon={Github} />
                                 <SocialLink href="https://www.linkedin.com/in/dushyantsolanki/" icon={Linkedin} />
                                 <SocialLink href="https://www.instagram.com/dushyantsolanky/" icon={Instagram} />
+                                {/* <SocialLink href="/admin/login" icon={LogInIcon} /> */}
                             </div>
                         </div>
                     </motion.div>
@@ -351,13 +376,14 @@ export default function RootLayout({
             <MobileHeader
                 isExpanded={isMobileExpanded}
                 onToggle={() => setIsMobileExpanded(!isMobileExpanded)}
+                count={count}
             />
 
             {/* Desktop Layout */}
             <div className="hidden lg:grid lg:grid-cols-[350px_1fr] lg:grid-rows-[auto_1fr] min-h-screen">
                 {/* Desktop Sidebar */}
                 <div className="row-span-2 border border-amber-100/10 bg-white/5">
-                    <Sidebar />
+                    <Sidebar count={count} />
                 </div>
 
                 {/* Desktop Main Content */}
@@ -381,7 +407,7 @@ export default function RootLayout({
             <div className="lg:hidden">
                 {/* Mobile Main Content */}
                 <motion.div
-                    className="min-h-screen p-4 pb-24"
+                    className="min-h-screen px-1.5 py-1.5 pb-24"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
