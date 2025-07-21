@@ -244,9 +244,9 @@ function MobileHeader({ isExpanded, onToggle, count }: { isExpanded: boolean; on
 // Bottom Navigation Component
 function BottomNavigation({ count, pathname, hovered, setHovered }: { count: number, pathname: string, hovered: string | null, setHovered: (arg: string | null) => void }) {
     return (
-        <nav className="lg:hidden fixed -bottom-1 left-1/2 transform -translate-x-1/2 z-50 w-full  px-2">
+        <nav className="lg:hidden fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full ">
             <motion.div
-                className="px-4 py-4 border rounded-t-4xl bg-white/10 border-amber-100/10 border-b-0 backdrop-blur-sm overflow-hidden"
+                className="px-4 py-4 border rounded-2xl rounded-b-none bg-white/10 border-amber-100/10 border-b-0 backdrop-blur-sm overflow-hidden"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
