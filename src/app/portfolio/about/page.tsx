@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button';
 
 export const metadata: Metadata = {
     title: "About | Dushyant Solanki - MERN Stack Developer",
@@ -74,7 +75,7 @@ const ProjectCard = ({ name, description, technologies, link, image }: {
     image: string
 }) => {
     return (
-        <div className="flex-1 min-w-[300px] max-w-[400px] w-full relative py-2 rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] hover:bg-green-300 before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
+        <div className="flex-1 min-w-[300px] max-w-[400px] w-full relative py-2 rounded-lg text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] hover:bg-green-300 before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
             <div className="p-4 h-full flex flex-col">
                 <img
                     src={image}
@@ -96,14 +97,16 @@ const ProjectCard = ({ name, description, technologies, link, image }: {
                         ))}
                     </div>
                     {link && (
-                        <Link
+
+                        <InteractiveHoverButton><Link
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block text-sm text-green-300 hover:underline transition-colors duration-200"
                         >
-                            View Project →
-                        </Link>
+                            View Project
+                        </Link></InteractiveHoverButton>
+
                     )}
                 </div>
             </div>
@@ -266,8 +269,6 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-
-
             </section>
 
 
