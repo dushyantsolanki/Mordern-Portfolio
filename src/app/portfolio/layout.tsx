@@ -244,14 +244,14 @@ function MobileHeader({ isExpanded, onToggle, count }: { isExpanded: boolean; on
 // Bottom Navigation Component
 function BottomNavigation({ count, pathname, hovered, setHovered }: { count: number, pathname: string, hovered: string | null, setHovered: (arg: string | null) => void }) {
     return (
-        <nav className="lg:hidden fixed -bottom-1 left-1/2 transform -translate-x-1/2 z-50 w-full">
+        <nav className="lg:hidden fixed -bottom-1 left-1/2 transform -translate-x-1/2 z-50 w-full  px-2">
             <motion.div
-                className="px-6 py-5 border rounded-t-4xl bg-white/10 border-amber-100/10 border-b-0 backdrop-blur-sm "
+                className="px-4 py-4 border rounded-t-4xl bg-white/10 border-amber-100/10 border-b-0 backdrop-blur-sm overflow-hidden"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
             >
-                <ul className="flex space-x-6 relative">
+                <ul className="flex justify-between items-center w-full min-w-0">
                     {navLinks.map((link, index) => {
                         const isActive = pathname === link.href
                         const isHovering = hovered === link.href
@@ -259,7 +259,7 @@ function BottomNavigation({ count, pathname, hovered, setHovered }: { count: num
                         return (
                             <motion.li
                                 key={link.name}
-                                className="relative"
+                                className="relative flex-1 min-w-0"
                                 onMouseEnter={() => setHovered(link.href)}
                                 onMouseLeave={() => setHovered(null)}
                                 initial={{ y: 20, opacity: 0 }}
@@ -269,17 +269,17 @@ function BottomNavigation({ count, pathname, hovered, setHovered }: { count: num
                                 {(isActive || isHovering) && (
                                     <motion.div
                                         layoutId="mobile-nav-highlight"
-                                        className={`h-10 absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-xl bg-black/10 border border-white/20`}
+                                        className="h-10 absolute inset-x-1 top-1/2 -translate-y-1/2 rounded-xl bg-black/10 border border-white/20"
                                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                                     />
                                 )}
 
                                 <Link
                                     href={link.href}
-                                    className={`px-2 py-3 text-sm relative z-10 font-medium flex items-center justify-center transition-all
-                    ${isActive ? 'text-white' : 'text-green-500'}`}
+                                    className={`px-2 py-3 text-xs sm:text-sm relative z-10 font-medium flex items-center justify-center transition-all w-full truncate
+                                    ${isActive ? 'text-white' : 'text-green-500'}`}
                                 >
-                                    {link.name}
+                                    <span className="truncate">{link.name}</span>
                                 </Link>
                             </motion.li>
                         )
