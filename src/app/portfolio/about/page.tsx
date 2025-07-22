@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
+import { TestimonialCard } from '@/components/TestimonialCard';
 
 export const metadata: Metadata = {
   title: 'About | Dushyant Solanki - MERN Stack Developer',
@@ -71,6 +72,58 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+};
+
+interface TestimonialData {
+  avatar: string;
+  name: string;
+  testimonial: string;
+}
+
+
+const TestimonialCards: React.FC = () => {
+  const testimonials: TestimonialData[] = [
+    {
+      avatar: "/avatar-1.png",
+      name: "Harsh Vaghela",
+      testimonial: "Dushyant is focused, reliable, and always delivers high-quality code within tight deadlines"
+    },
+    {
+      avatar: "/avatar-1.png",
+      name: "Hemant Bhadarka",
+      testimonial: "His attention to detail and ability to adapt quickly make him incredibly dependable."
+    },
+    {
+      avatar: "/avatar-1.png",
+      name: "Yagnik Joshi",
+      testimonial: "Working with Dushyant has been smooth—he’s professional, efficient, and a strong team player"
+    }
+    ,
+
+
+  ];
+
+  return (
+    <div className="w-full max-w-full overflow-hidden">
+      <div
+        className="flex gap-4 pt-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-4 lg:grid lg:grid-cols-3 lg:gap-12 lg:overflow-x-hidden"
+        style={{ scrollBehavior: 'smooth' }}
+      >
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 snap-center lg:flex-shrink w-[280px] sm:w-[320px] md:w-[360px] lg:w-full"
+          >
+            <TestimonialCard
+              avatar={testimonial.avatar}
+              name={testimonial.name}
+              testimonial={testimonial.testimonial}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const About = () => {
@@ -189,7 +242,7 @@ const About = () => {
         <h1 className="text-2xl font-semibold mb-3"> Technology </h1>
       </header>
 
-      <section className=" flex gap-8 flex-wrap">
+      <section className="mb-8 flex gap-8 flex-wrap">
         <TooltipProvider>
           <div className="flex flex-wrap  gap-8 lg:gap-6 justify-center lg:justify-start">
             {tech.map((item, index) => (
@@ -212,7 +265,16 @@ const About = () => {
           </div>
         </TooltipProvider>
       </section>
-    </article>
+      <div className='mt-16 '>
+        <header className="mb-4">
+          <h1 className="text-2xl font-semibold mb-3"> Testimonial </h1>
+        </header>
+
+        <section >
+          <TestimonialCards />
+        </section>
+      </div>
+    </article >
   );
 };
 

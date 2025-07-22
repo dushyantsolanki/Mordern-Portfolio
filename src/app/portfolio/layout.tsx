@@ -427,9 +427,8 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`px-5 py-3 text-lg relative z-10 font-medium flex items-center justify-center ${
-                    isActive ? 'text-white' : 'text-green-500'
-                  }`}
+                  className={`px-5 py-3 text-lg relative z-10 font-medium flex items-center justify-center ${isActive ? 'text-white' : 'text-green-500'
+                    }`}
                 >
                   {link.name}
                 </Link>
