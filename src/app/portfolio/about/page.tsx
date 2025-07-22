@@ -112,7 +112,7 @@ const TestimonialCards: React.FC = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 snap-center lg:flex-shrink w-[280px] sm:w-[320px] md:w-[360px] lg:w-full"
+            className="flex-shrink-0 snap-center lg:flex-shrink w-[310px] sm:w-[400px] md:w-[360px] lg:w-full"
           >
             <TestimonialCard
               avatar={testimonial.avatar}
