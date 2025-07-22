@@ -24,7 +24,7 @@ const profileData = {
 const navLinks = [
     { name: 'About', href: '/portfolio/about' },
     { name: 'Resume', href: '/portfolio/resume' },
-    { name: 'Blogs', href: '/portfolio/blogs' },
+    { name: 'Work', href: '/portfolio/work' },
     { name: 'Contact', href: '/portfolio/contact' }
 ];
 

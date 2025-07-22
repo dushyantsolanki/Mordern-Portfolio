@@ -9,6 +9,10 @@ export const metadata: Metadata = {
         "View the professional resume of Dushyant Solanki, a MERN Stack Developer skilled in React, Node.js, Next.js, and MongoDB. Explore experience, skills, and education.",
     keywords: [
         "Dushyant Solanki Resume",
+        "Hire",
+        "Hire Me",
+        "Gandhinagar",
+        "Ahmedabad",
         "Portfolio",
         'Modern Portfolio',
         "MERN Stack Developer Resume",
@@ -37,17 +41,17 @@ export const metadata: Metadata = {
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
-        canonical: "https://mordern-portfolio-sandy.vercel.app/resume",
+        canonical: "https://mordern-portfolio-sandy.vercel.app/portfolio/resume",
     },
     openGraph: {
         title: "Resume | Dushyant Solanki - MERN Stack Developer",
         description:
             "Explore the resume of Dushyant Solanki, a full-stack JavaScript developer specializing in the MERN stack, including React, Next.js, Node.js, and MongoDB.",
-        url: "https://mordern-portfolio-sandy.vercel.app/resume",
+        url: "https://mordern-portfolio-sandy.vercel.app/portfolio/resume",
         siteName: "Portfolio of Dushyant Solanki",
         images: [
             {
-                url: "/myavatar.png", // Recommended: upload this image (1200x630px)
+                url: "/myavatar_imresizer.jpg", // Recommended: upload this image (1200x630px)
                 width: 1200,
                 height: 630,
                 alt: "Dushyant Solanki Resume Preview",

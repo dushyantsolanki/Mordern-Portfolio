@@ -8,6 +8,10 @@ export const metadata: Metadata = {
         "Get in touch with Dushyant Solanki, a MERN Stack Developer specializing in React, Node.js, MongoDB, and responsive UI development. Available for freelance work, collaborations, and tech projects.",
     keywords: [
         "Dushyant Solanki",
+        "Hire",
+        "Hire Me",
+        "Gandhinagar",
+        "Ahmedabad",
         "Portfolio",
         'Modern Portfolio',
         "Contact MERN Developer",
@@ -36,17 +40,17 @@ export const metadata: Metadata = {
     },
     metadataBase: new URL("https://mordern-portfolio-sandy.vercel.app"),
     alternates: {
-        canonical: "https://mordern-portfolio-sandy.vercel.app/contact",
+        canonical: "https://mordern-portfolio-sandy.vercel.app/portfolio/contact",
     },
     openGraph: {
         title: "Contact | Dushyant Solanki - MERN Stack Developer",
         description:
             "Looking to collaborate or hire? Contact Dushyant Solanki, a full-stack MERN Developer with skills in React, Next.js, Node.js, and MongoDB.",
-        url: "https://mordern-portfolio-sandy.vercel.app/contact",
+        url: "https://mordern-portfolio-sandy.vercel.app/portfolio/contact",
         siteName: "Portfolio of Dushyant Solanki",
         images: [
             {
-                url: "/myavatar.png",
+                url: "/myavatar_imresizer.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Dushyant Solanki - Contact Page Open Graph Image",
