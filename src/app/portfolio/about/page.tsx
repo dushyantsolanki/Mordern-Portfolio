@@ -51,15 +51,15 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
   },
-  metadataBase: new URL('https://mordern-portfolio-sandy.vercel.app'),
+  metadataBase: new URL('https://portfolio-dev-dushyant.vercel.app'),
   alternates: {
-    canonical: 'https://mordern-portfolio-sandy.vercel.app/portfolio/about',
+    canonical: 'https://portfolio-dev-dushyant.vercel.app/portfolio/about',
   },
   openGraph: {
     title: 'About | Dushyant Solanki - MERN Stack Developer',
     description:
       'Meet Dushyant Solanki, a passionate MERN Stack Developer skilled in building scalable web apps using React, Node.js, and MongoDB.',
-    url: 'https://mordern-portfolio-sandy.vercel.app/portfolio/about',
+    url: 'https://portfolio-dev-dushyant.vercel.app/portfolio/about',
     siteName: 'Portfolio of Dushyant Solanki',
     images: [
       {

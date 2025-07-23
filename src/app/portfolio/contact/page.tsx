@@ -38,15 +38,15 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
   },
-  metadataBase: new URL('https://mordern-portfolio-sandy.vercel.app'),
+  metadataBase: new URL('https://portfolio-dev-dushyant.vercel.app'),
   alternates: {
-    canonical: 'https://mordern-portfolio-sandy.vercel.app/portfolio/contact',
+    canonical: 'https://portfolio-dev-dushyant.vercel.app/portfolio/contact',
   },
   openGraph: {
     title: 'Contact | Dushyant Solanki - MERN Stack Developer',
     description:
       'Looking to collaborate or hire? Contact Dushyant Solanki, a full-stack MERN Developer with skills in React, Next.js, Node.js, and MongoDB.',
-    url: 'https://mordern-portfolio-sandy.vercel.app/portfolio/contact',
+    url: 'https://portfolio-dev-dushyant.vercel.app/portfolio/contact',
     siteName: 'Portfolio of Dushyant Solanki',
     images: [
       {
