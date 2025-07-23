@@ -5,7 +5,7 @@ export async function GET() {
       '/',
       '/portfolio/about',
       '/portfolio/resume',
-      '/portfolio/blogs',
+      '/portfolio/work',
       '/portfolio/contact',
     ];
 
