@@ -24,8 +24,8 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS to sh
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/yourusername/mordern-portfolio.git
+cd mordern-portfolio
 ```
 
 2. Install dependencies:
@@ -70,7 +70,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
+- `npm run format` - Run formate
 
 ## 🚀 Deployment
 
