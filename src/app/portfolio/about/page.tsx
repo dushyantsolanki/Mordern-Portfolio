@@ -88,17 +88,17 @@ const TestimonialCards: React.FC = () => {
   const testimonials: TestimonialData[] = [
     {
       avatar: "/avatar-1.png",
-      name: "Harsh Vaghela",
+      name: "Harsh",
       testimonial: "Dushyant is focused, reliable, and always delivers high-quality code within tight deadlines"
     },
     {
       avatar: "/avatar-1.png",
-      name: "Hemant Bhadarka",
+      name: "Hemant",
       testimonial: "His attention to detail and ability to adapt quickly make him incredibly dependable."
     },
     {
       avatar: "/avatar-1.png",
-      name: "Yagnik Joshi",
+      name: "Yagnik",
       testimonial: "Working with Dushyant has been smooth—he’s professional, efficient, and a strong team player"
     }
     ,
@@ -115,7 +115,7 @@ const TestimonialCards: React.FC = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 snap-center lg:flex-shrink w-[310px] sm:w-[400px] md:w-[360px] lg:w-full"
+            className="flex-shrink-0 snap-center lg:flex-shrink w-full "
           >
             <TestimonialCard
               avatar={testimonial.avatar}
