@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     'Get in touch with Dushyant Solanki, a MERN Stack Developer specializing in React, Node.js, MongoDB, and responsive UI development. Available for freelance work, collaborations, and tech projects.',
   keywords: [
     'Dushyant Solanki',
+    'Dushyant',
+    'Dushyant Portfolio',
+    "Mern",
     'Hire',
     'Hire Me',
     'Gandhinagar',

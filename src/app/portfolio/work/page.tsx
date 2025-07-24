@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   description:
     'Explore a collection of professional and personal projects built using React, Node.js, MongoDB, and more.',
   keywords: [
+    'Dushyant Solanki',
+    'Dushyant',
+    'Dushyant Portfolio',
+    "Mern",
     'Hire',
     'Hire Me',
     'Gandhinagar',
