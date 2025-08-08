@@ -15,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className}  `}>
-        <main className="min-h-screenbg bg-primary text-white font-light">
+      <body className={`${poppins.className} `}>
+        <main className="min-h-screenbg bg-primary font-light text-white">
           {children}
         </main>
       </body>

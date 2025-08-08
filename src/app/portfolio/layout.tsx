@@ -40,10 +40,10 @@ const navLinks = [
 // Sidebar Component
 function Sidebar({ count }: { count: number }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="fixed top-4 flex min-h-screen flex-col">
       {/* Profile Header */}
       <div className="flex flex-col items-center p-8">
-        <div className="w-40 h-40 bg-white/10 rounded-2xl flex items-center justify-center mb-4 text-4xl">
+        <div className="mb-4 flex h-40 w-40 items-center justify-center rounded-2xl bg-white/10 text-4xl">
           <Image
             src={profileData.avatar}
             alt="Profile Picture"
@@ -51,10 +51,10 @@ function Sidebar({ count }: { count: number }) {
             width={200}
           />
         </div>
-        <h1 className="text-2xl font-semibold text-white mb-4">
+        <h1 className="mb-4 text-2xl font-semibold text-white">
           {profileData.name}
         </h1>
-        <p className="relative py-2 px-4 rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
+        <p className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-4 py-2 text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
           {profileData.title}
         </p>
       </div>
@@ -63,7 +63,7 @@ function Sidebar({ count }: { count: number }) {
       <div className="px-12">
         <Separator className="bg-white/20" />
       </div>
-      <div className="flex-1 p-4 space-y-1">
+      <div className="flex-1 space-y-1 p-4">
         <ContactItem
           icon={Mail}
           label="EMAIL"
@@ -88,7 +88,7 @@ function Sidebar({ count }: { count: number }) {
         />
 
         {/* Social Links */}
-        <div className="p-6 border-white/10">
+        <div className="border-white/10 p-6">
           <div className="flex justify-center space-x-4">
             <SocialLink
               href="https://github.com/dushyantsolanki"
@@ -106,8 +106,8 @@ function Sidebar({ count }: { count: number }) {
           </div>
         </div>
 
-        <div className="hidden lg:flex  justify-center">
-          <div className="text-center w-1/2 text-4xl bg-black/20 border border-white/20 rounded-2xl p-3  shadow-2xl">
+        <div className="hidden justify-center lg:flex">
+          <div className="w-1/2 rounded-2xl border border-white/20 bg-black/20 p-3 text-center text-4xl shadow-2xl">
             <NumberTicker value={count} format="youtube" />
           </div>
         </div>
@@ -129,15 +129,15 @@ function ContactItem({
   href?: string;
 }) {
   const content = (
-    <div className="flex items-center space-x-3 p-3 rounded-lg transition-colors duration-200">
+    <div className="flex items-center space-x-3 rounded-lg p-3 transition-colors duration-200">
       <div className="flex-shrink-0">
-        <div className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
+        <div className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
           <Icon className="text-green-500" />
         </div>
       </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-xs text-gray-400 uppercase tracking-wide">{label}</p>
-        <p className="text-sm text-gray-200 truncate">{value}</p>
+      <div className="min-w-0 flex-1">
+        <p className="text-xs tracking-wide text-gray-400 uppercase">{label}</p>
+        <p className="truncate text-sm text-gray-200">{value}</p>
       </div>
     </div>
   );
@@ -150,11 +150,11 @@ function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
   return (
     <a
       href={href}
-      className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 mr-1"
+      className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-[''] hover:bg-green-300"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Icon className="w-5 h-5 text-white-300" />
+      <Icon className="text-white-300 h-5 w-5" />
     </a>
   );
 }
@@ -171,7 +171,7 @@ function MobileHeader({
 }) {
   return (
     <motion.div
-      className="lg:hidden sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10"
+      className="sticky top-0 z-50 border-b border-white/10 bg-white/10 backdrop-blur-md lg:hidden"
       initial={false}
       animate={{ height: isExpanded ? 'auto' : '80px' }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -179,7 +179,7 @@ function MobileHeader({
       {/* Collapsed Header */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
             <Image
               src={profileData.avatar}
               alt="Profile Picture"
@@ -198,28 +198,28 @@ function MobileHeader({
 
         <button
           onClick={onToggle}
-          className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+          className="rounded-lg bg-white/10 p-2 transition-colors hover:bg-white/20"
         >
           <motion.div
             animate={{ rotate: isExpanded ? 180 : 0 }}
             transition={{ duration: 0.3 }}
           >
             {isExpanded ? (
-              <X className="w-6 h-6" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="h-6 w-6" />
             )}
           </motion.div>
         </button>
       </div>
-      <div className="relative ">
+      <div className="relative">
         <motion.div
-          className="lg:hidden fixed top-[400px] right-0 z-50 bg-black/40 border border-white/10 rounded-xl rounded-r-none  px-3 py-2"
+          className="fixed top-[400px] right-0 z-50 rounded-xl rounded-r-none border border-white/10 bg-black/40 px-3 py-2 lg:hidden"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'linear' }}
         >
-          <span className="font-medium text-green-500 ">
+          <span className="font-medium text-green-500">
             <NumberTicker value={count} format="youtube" />
           </span>
         </motion.div>
@@ -235,21 +235,21 @@ function MobileHeader({
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <div className="px-4 pb-4 space-y-3">
+            <div className="space-y-3 px-4 pb-4">
               <Separator className="bg-white/20" />
 
               {/* Contact Info in Mobile */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="flex items-center space-x-2">
-                  <div className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
-                    <Mail className="w-5 h-5 text-green-500" />
+                  <div className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                    <Mail className="h-5 w-5 text-green-500" />
                   </div>
 
                   <div>
                     <p className="text-xs text-gray-400 uppercase">EMAIL</p>
                     <a
                       href={`mailto:${profileData.email}`}
-                      className="text-sm text-gray-200 truncate"
+                      className="truncate text-sm text-gray-200"
                     >
                       {profileData.email}
                     </a>
@@ -257,8 +257,8 @@ function MobileHeader({
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <div className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
-                    <Phone className="w-5 h-5 text-green-500" />
+                  <div className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                    <Phone className="h-5 w-5 text-green-500" />
                   </div>
 
                   <div>
@@ -273,8 +273,8 @@ function MobileHeader({
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <div className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
-                    <Calendar className="w-5 h-5 text-green-500" />
+                  <div className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                    <Calendar className="h-5 w-5 text-green-500" />
                   </div>
 
                   <div>
@@ -286,8 +286,8 @@ function MobileHeader({
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <div className="relative py-3 px-3 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-1">
-                    <MapIcon className="w-5 h-5 text-green-500" />
+                  <div className="relative z-10 mr-1 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                    <MapIcon className="h-5 w-5 text-green-500" />
                   </div>
 
                   <div>
@@ -336,14 +336,14 @@ function BottomNavigation({
   setHovered: (arg: string | null) => void;
 }) {
   return (
-    <nav className="lg:hidden fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full ">
+    <nav className="fixed bottom-0 left-1/2 z-50 w-full -translate-x-1/2 transform lg:hidden">
       <motion.div
-        className="px-4 py-4 border rounded-2xl rounded-b-none bg-white/10 border-amber-100/10 border-b-0 backdrop-blur-sm overflow-hidden"
+        className="overflow-hidden rounded-2xl rounded-b-none border border-b-0 border-amber-100/10 bg-white/10 px-4 py-4 backdrop-blur-sm"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <ul className="flex justify-between items-center w-full min-w-0">
+        <ul className="flex w-full min-w-0 items-center justify-between">
           {navLinks.map((link, index) => {
             const isActive = pathname === link.href;
             const isHovering = hovered === link.href;
@@ -351,7 +351,7 @@ function BottomNavigation({
             return (
               <motion.li
                 key={link.name}
-                className="relative flex-1 min-w-0"
+                className="relative min-w-0 flex-1"
                 onMouseEnter={() => setHovered(link.href)}
                 onMouseLeave={() => setHovered(null)}
                 initial={{ y: 20, opacity: 0 }}
@@ -361,15 +361,14 @@ function BottomNavigation({
                 {(isActive || isHovering) && (
                   <motion.div
                     layoutId="mobile-nav-highlight"
-                    className="h-10 absolute inset-x-1 top-1/2 -translate-y-1/2 rounded-xl bg-black/10 border border-white/20"
+                    className="absolute inset-x-1 top-1/2 h-10 -translate-y-1/2 rounded-xl border border-white/20 bg-black/10"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
 
                 <Link
                   href={link.href}
-                  className={`px-2 py-3 text-xs sm:text-sm relative z-10 font-medium flex items-center justify-center transition-all w-full truncate
-                                    ${isActive ? 'text-white' : 'text-green-500'}`}
+                  className={`relative z-10 flex w-full items-center justify-center truncate px-2 py-3 text-xs font-medium transition-all sm:text-sm ${isActive ? 'text-white' : 'text-green-500'}`}
                 >
                   <span className="truncate">{link.name}</span>
                 </Link>
@@ -395,14 +394,14 @@ function DesktopNavigation({
   setHovered: (arg: string | null) => void;
 }) {
   return (
-    <nav className="lg:flex mt-4 sticky bottom-2 w-full flex justify-center items-center z-50">
+    <nav className="sticky bottom-2 z-50 mt-4 flex w-full items-center justify-center lg:flex">
       <motion.div
-        className="h-18 px-8 border  bg-white/10 border-amber-100/10 backdrop-blur-sm flex items-center rounded-4xl"
+        className="flex h-18 items-center rounded-4xl border border-amber-100/10 bg-white/10 px-8 backdrop-blur-sm"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <ul className="flex space-x-8 relative">
+        <ul className="relative flex space-x-8">
           {navLinks.map((link, index) => {
             const isActive = pathname === link.href;
             const isHovering = hovered === link.href;
@@ -420,15 +419,16 @@ function DesktopNavigation({
                 {(isActive || isHovering) && (
                   <motion.div
                     layoutId="nav-highlight"
-                    className={`h-10 absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-xl bg-black/10 border border-white/20 `}
+                    className={`absolute inset-x-0 top-1/2 h-10 -translate-y-1/2 rounded-xl border border-white/20 bg-black/10`}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
 
                 <Link
                   href={link.href}
-                  className={`px-5 py-3 text-lg relative z-10 font-medium flex items-center justify-center ${isActive ? 'text-white' : 'text-green-500'
-                    }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
+                    isActive ? 'text-white' : 'text-green-500'
+                  }`}
                 >
                   {link.name}
                 </Link>
@@ -480,7 +480,7 @@ export default function RootLayout({
       />
 
       {/* Desktop Layout */}
-      <div className="hidden lg:grid lg:grid-cols-[350px_1fr] lg:grid-rows-[auto_1fr] min-h-screen">
+      <div className="hidden min-h-screen lg:grid lg:grid-cols-[350px_1fr] lg:grid-rows-[auto_1fr]">
         {/* Desktop Sidebar */}
         <div className="row-span-2 border border-amber-100/10 bg-white/5">
           <Sidebar count={count} />
@@ -489,7 +489,7 @@ export default function RootLayout({
         {/* Desktop Main Content */}
         <div className="px-8">
           <motion.div
-            className="min-h-screen border-2 border-t-0 rounded-xl rounded-t-none border-white/10 bg-white/5 p-8"
+            className="min-h-screen rounded-xl rounded-t-none border-2 border-t-0 border-white/10 bg-white/5 p-8"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -516,7 +516,7 @@ export default function RootLayout({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <div className="border border-white/10 bg-white/5 rounded-xl p-6">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6">
             {children}
           </div>
         </motion.div>

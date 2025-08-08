@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Dushyant Solanki Resume',
     'Dushyant',
     'Dushyant Portfolio',
-    "Mern",
+    'Mern',
     'Hire',
     'Hire Me',
     'Gandhinagar',
@@ -88,25 +88,25 @@ const Resume = () => {
   return (
     <article>
       <header className="mb-4">
-        <h1 className="text-2xl font-semibold mb-3"> Resume </h1>
-        <div className="h-1 w-12 bg-green-400 rounded-md"></div>
+        <h1 className="mb-3 text-2xl font-semibold"> Resume </h1>
+        <div className="h-1 w-12 rounded-md bg-green-400"></div>
       </header>
 
       <section className="mb-4">
         <div className="">
           {/* Experience Section */}
           <div>
-            <div className="flex items-center mb-6">
-              <div className="relative  py-3 px-3 rounded-md text-[#07ff45c0]  shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-3">
-                <Briefcase className=" text-green-500" />
+            <div className="mb-6 flex items-center">
+              <div className="relative z-10 mr-3 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                <Briefcase className="text-green-500" />
               </div>
 
-              <h2 className="text-2xl font-bold ">Experience</h2>
+              <h2 className="text-2xl font-bold">Experience</h2>
             </div>
 
             <div className="relative">
               {/* Continuous vertical line for experience - connects to last dot */}
-              <div className="absolute left-5 -top-6  w-0.5 bg-white/10 h-full "></div>
+              <div className="absolute -top-6 left-5 h-full w-0.5 bg-white/10"></div>
 
               <div className="space-y-8">
                 {/* 
@@ -119,17 +119,17 @@ const Resume = () => {
                                 </div> */}
 
                 <div className="relative pl-12">
-                  <div className="absolute left-[13px] top-2 w-4 h-4 bg-white/30 rounded-full z-10  after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-2 after:h-2 after:bg-green-500 after:rounded-full"></div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <div className="absolute top-2 left-[13px] z-10 h-4 w-4 rounded-full bg-white/30 after:absolute after:top-1/2 after:left-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-green-500 after:content-['']"></div>
+                  <h3 className="mb-2 text-xl font-semibold text-white">
                     Lemolite Technologies LLP
                   </h3>
-                  <p className="text-gray-400 text-sm mb-3">
+                  <p className="mb-3 text-sm text-gray-400">
                     Aug 2024 - May 2025{' '}
                   </p>
-                  <span className="text-gray-100 bg-white/5 py-1 px-2 rounded-sm text-sm ">
+                  <span className="rounded-sm bg-white/5 px-2 py-1 text-sm text-gray-100">
                     Mern Stack Developer
                   </span>
-                  <ul className="mt-4 text-gray-300 leading-relaxed list-disc list-inside space-y-2">
+                  <ul className="mt-4 list-inside list-disc space-y-2 leading-relaxed text-gray-300">
                     <li>
                       Developed full-stack web applications using React.js,
                       Next.js, Node.js and MongoDB, ensuring responsive design
@@ -157,28 +157,28 @@ const Resume = () => {
           </div>
           {/* Education Section */}
           <div className="mt-12">
-            <div className="flex items-center mb-6">
-              <div className="relative  py-3 px-3 rounded-md text-[#07ff45c0]  shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out mr-3">
-                <GraduationCap className=" text-green-500" />
+            <div className="mb-6 flex items-center">
+              <div className="relative z-10 mr-3 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-3 py-3 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
+                <GraduationCap className="text-green-500" />
               </div>
 
-              <h2 className="text-2xl font-bold ">Education</h2>
+              <h2 className="text-2xl font-bold">Education</h2>
             </div>
 
             <div className="relative">
               {/* Continuous vertical line for education - connects to last dot */}
-              <div className="absolute left-5 -top-6 w-0.5 bg-white/10 h-full"></div>
+              <div className="absolute -top-6 left-5 h-full w-0.5 bg-white/10"></div>
 
               <div className="space-y-8">
                 {/* Gujarat Technological University */}
                 <div className="relative pl-12">
-                  <div className="absolute left-[13px] top-2 w-4 h-4 bg-white/30 rounded-full z-10  after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-2 after:h-2 after:bg-green-500 after:rounded-full"></div>
+                  <div className="absolute top-2 left-[13px] z-10 h-4 w-4 rounded-full bg-white/30 after:absolute after:top-1/2 after:left-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-green-500 after:content-['']"></div>
 
-                  <h3 className="text-xl font-semibold text-white mb-2 ">
+                  <h3 className="mb-2 text-xl font-semibold text-white">
                     Gujarat Technological University
                   </h3>
-                  <p className="text-gray-400 text-sm mb-3 ">2020 — 2024</p>
-                  <p className="text-gray-300 leading-relaxed ">
+                  <p className="mb-3 text-sm text-gray-400">2020 — 2024</p>
+                  <p className="leading-relaxed text-gray-300">
                     I hold a Bachelor of Technology (B.Tech) in Computer
                     Engineering from Gujarat Technological University, where I
                     graduated with a CGPA of 9.0. My studies provided me with a
@@ -190,12 +190,12 @@ const Resume = () => {
 
                 {/* The Imperial Science School */}
                 <div className="relative pl-12">
-                  <div className="absolute left-[13px] top-2 w-4 h-4 bg-white/30 rounded-full z-10  after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-2 after:h-2 after:bg-green-500 after:rounded-full"></div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <div className="absolute top-2 left-[13px] z-10 h-4 w-4 rounded-full bg-white/30 after:absolute after:top-1/2 after:left-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-green-500 after:content-['']"></div>
+                  <h3 className="mb-2 text-xl font-semibold text-white">
                     The Imperial Science School
                   </h3>
-                  <p className="text-gray-400 text-sm mb-3">2018 — 2020</p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="mb-3 text-sm text-gray-400">2018 — 2020</p>
+                  <p className="leading-relaxed text-gray-300">
                     I completed my high schooling at The Imperial Science
                     School, where I achieved an A+ grade. This solid academic
                     foundation helped shape my passion for technology and set
@@ -208,28 +208,28 @@ const Resume = () => {
 
           {/* Skills */}
 
-          <div className="mt-12 ">
-            <h2 className="text-2xl font-bold mb-8 ">Skills</h2>
+          <div className="mt-12">
+            <h2 className="mb-8 text-2xl font-bold">Skills</h2>
 
-            <div className="border p-8 shadow-md shadow-black/5 rounded-2xl border-white/20 text-white">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-white/20 p-8 text-white shadow-md shadow-black/5">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {skills.map((skill, index) => (
                   <div key={index} className="mb-4">
-                    <div className="flex justify-between mb-1">
-                      <span className="relative mb-2 py-0.5 pl-2 pr-6 rounded-sm rounded-tr-4xl rounded-bl-0 text-gray-200  shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
+                    <div className="mb-1 flex justify-between">
+                      <span className="rounded-bl-0 relative z-10 mb-2 rounded-sm rounded-tr-4xl bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] py-0.5 pr-6 pl-2 text-gray-200 shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
                         {skill.name}
                       </span>
                       <span>{skill.percentage}%</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2.5">
+                    <div className="h-2.5 w-full rounded-full bg-gray-700">
                       <div
-                        className="bg-green-500 h-2.5 rounded-full"
+                        className="h-2.5 rounded-full bg-green-500"
                         style={{ width: `${skill.percentage}%` }}
                       ></div>
                     </div>
                     {/* Add separator for non-last items in multi-column layouts */}
                     {index < skills.length - 1 && (
-                      <div className="hidden md:block lg:block mt-4 border-t border-white/10 md:border-t-0 md:border-r lg:border-t-0 lg:border-r"></div>
+                      <div className="mt-4 hidden border-t border-white/10 md:block md:border-t-0 md:border-r lg:block lg:border-t-0 lg:border-r"></div>
                     )}
                   </div>
                 ))}

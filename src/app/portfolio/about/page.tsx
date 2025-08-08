@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'Dushyant Solanki',
     'Dushyant',
     'Dushyant Portfolio',
-    "Mern",
+    'Mern',
     'Portfolio',
     'Hire',
     'Hire Me',
@@ -83,39 +83,38 @@ interface TestimonialData {
   testimonial: string;
 }
 
-
 const TestimonialCards: React.FC = () => {
   const testimonials: TestimonialData[] = [
     {
-      avatar: "/avatar-1.png",
-      name: "Harsh",
-      testimonial: "Dushyant is focused, reliable, and always delivers high-quality code within tight deadlines"
+      avatar: '/avatar-1.png',
+      name: 'Harsh',
+      testimonial:
+        'Dushyant is focused, reliable, and always delivers high-quality code within tight deadlines',
     },
     {
-      avatar: "/avatar-1.png",
-      name: "Hemant",
-      testimonial: "His attention to detail and ability to adapt quickly make him incredibly dependable."
+      avatar: '/avatar-1.png',
+      name: 'Hemant',
+      testimonial:
+        'His attention to detail and ability to adapt quickly make him incredibly dependable.',
     },
     {
-      avatar: "/avatar-1.png",
-      name: "Yagnik",
-      testimonial: "Working with Dushyant has been smooth—he’s professional, efficient, and a strong team player"
-    }
-    ,
-
-
+      avatar: '/avatar-1.png',
+      name: 'Yagnik',
+      testimonial:
+        'Working with Dushyant has been smooth—he’s professional, efficient, and a strong team player',
+    },
   ];
 
   return (
     <div className="w-full max-w-full overflow-hidden">
       <div
-        className="flex gap-4 pt-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-4 lg:grid lg:grid-cols-3 lg:gap-12 lg:overflow-x-hidden"
+        className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto py-4 pt-8 lg:grid lg:grid-cols-3 lg:gap-12 lg:overflow-x-hidden"
         style={{ scrollBehavior: 'smooth' }}
       >
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 snap-center lg:flex-shrink w-full "
+            className="w-full flex-shrink-0 snap-center lg:flex-shrink"
           >
             <TestimonialCard
               avatar={testimonial.avatar}
@@ -176,13 +175,13 @@ const About = () => {
   return (
     <article>
       <header className="mb-4">
-        <h1 className="text-2xl font-semibold mb-3"> About Me </h1>
-        <div className="h-1 w-12 bg-green-400 rounded-md"></div>
+        <h1 className="mb-3 text-2xl font-semibold"> About Me </h1>
+        <div className="h-1 w-12 rounded-md bg-green-400"></div>
       </header>
 
       <section className="mb-8">
-        <div className="flex items-center lg:items-start justify-between flex-col-reverse lg:flex-row ">
-          <div className="box-border pt-8  lg:pr-36">
+        <div className="flex flex-col-reverse items-center justify-between lg:flex-row lg:items-start">
+          <div className="box-border pt-8 lg:pr-36">
             <p>
               I'm a MERN Stack Developer with 1 year of hands-on experience
               crafting responsive and scalable web applications. I specialize in
@@ -209,7 +208,7 @@ const About = () => {
               <a
                 href="/Resume_Dushyant_.pdf"
                 download
-                className="relative w-34 py-2 pl-3 pr-8 rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"
+                className="relative z-10 mr-1 flex w-34 cursor-pointer items-center justify-start gap-2 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] py-2 pr-8 pl-3 text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-[''] hover:bg-green-300"
               >
                 <span>
                   <ArrowDownToLine className="h-4 w-4 text-green-500" />
@@ -218,7 +217,7 @@ const About = () => {
               </a>
               <Link
                 href="/portfolio/contact"
-                className="relative w-38 py-2 pl-3  rounded-md text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out hover:bg-green-300 cursor-pointer mr-1 flex gap-2 items-center justify-start"
+                className="relative z-10 mr-1 flex w-38 cursor-pointer items-center justify-start gap-2 rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] py-2 pl-3 text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-[''] hover:bg-green-300"
               >
                 {' '}
                 <span>
@@ -229,7 +228,7 @@ const About = () => {
             </div>
           </div>
           <div>
-            <div className="w-64 h-64 bg-white/10 rounded-2xl flex items-center justify-center mb-4 text-4xl">
+            <div className="mb-4 flex h-64 w-64 items-center justify-center rounded-2xl bg-white/10 text-4xl">
               <Image
                 src="/myavatar.png"
                 alt="Profile Picture"
@@ -242,16 +241,16 @@ const About = () => {
       </section>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold mb-3"> Technology </h1>
+        <h1 className="mb-3 text-2xl font-semibold"> Technology </h1>
       </header>
 
-      <section className="mb-8 flex gap-8 flex-wrap">
+      <section className="mb-8 flex flex-wrap gap-8">
         <TooltipProvider>
-          <div className="flex flex-wrap  gap-8 lg:gap-6 justify-center lg:justify-start">
+          <div className="flex flex-wrap justify-center gap-8 lg:justify-start lg:gap-6">
             {tech.map((item, index) => (
               <Tooltip key={index}>
                 <TooltipTrigger asChild>
-                  <div className="relative flex items-center justify-center w-36 p-4 rounded-md text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
+                  <div className="relative z-10 flex w-36 items-center justify-center rounded-md bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] p-4 text-[#07ff45c0] shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-['']">
                     <Image
                       width={70}
                       height={70}
@@ -268,16 +267,16 @@ const About = () => {
           </div>
         </TooltipProvider>
       </section>
-      <div className='mt-16 '>
+      <div className="mt-16">
         <header className="mb-4">
-          <h1 className="text-2xl font-semibold mb-3"> Testimonial </h1>
+          <h1 className="mb-3 text-2xl font-semibold"> Testimonial </h1>
         </header>
 
-        <section >
+        <section>
           <TestimonialCards />
         </section>
       </div>
-    </article >
+    </article>
   );
 };
 

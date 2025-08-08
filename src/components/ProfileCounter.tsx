@@ -19,11 +19,11 @@ const ProfileCounter = ({ count }: { count: number }) => {
   }, []);
 
   return (
-    <div className="lg:hidden flex justify-end">
+    <div className="flex justify-end lg:hidden">
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className="text-center relative z-[1000] top-2 w-[100px] text-2xl bg-black/20 backdrop-blur-3xl border border-white/20 rounded-full rounded-r-none py-2 px-4 shadow-2xl"
+            className="relative top-2 z-[1000] w-[100px] rounded-full rounded-r-none border border-white/20 bg-black/20 px-4 py-2 text-center text-2xl shadow-2xl backdrop-blur-3xl"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 100, opacity: 0 }}

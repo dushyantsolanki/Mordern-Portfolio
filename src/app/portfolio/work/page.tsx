@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Dushyant Solanki',
     'Dushyant',
     'Dushyant Portfolio',
-    "Mern",
+    'Mern',
     'Hire',
     'Hire Me',
     'Gandhinagar',
@@ -136,22 +136,22 @@ const ProjectCard = ({
   image: string;
 }) => {
   return (
-    <div className="flex-1 min-w-[300px] max-w-[400px] w-full relative py-2 rounded-lg text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease-in-out bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] hover:bg-green-300 before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease-in-out">
-      <div className="p-4 h-full flex flex-col">
+    <div className="relative z-10 w-full max-w-[400px] min-w-[300px] flex-1 rounded-lg bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] py-2 text-gray-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 ease-in-out before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:ease-in-out before:content-[''] hover:bg-green-300">
+      <div className="flex h-full flex-col p-4">
         <img
           src={image}
           alt={`${name} screenshot`}
           loading="lazy"
-          className="w-full h-40 object-cover rounded-xl mb-4"
+          className="mb-4 h-40 w-full rounded-xl object-cover"
         />
-        <h3 className="text-lg font-semibold text-white mb-2">{name}</h3>
-        <p className="text-sm text-gray-300 mb-3 flex-grow">{description}</p>
+        <h3 className="mb-2 text-lg font-semibold text-white">{name}</h3>
+        <p className="mb-3 flex-grow text-sm text-gray-300">{description}</p>
         <div className="mt-auto">
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="mb-4 flex flex-wrap gap-2">
             {technologies.map((tech: string, index: number) => (
               <span
                 key={index}
-                className="px-2 py-1 text-xs font-medium text-gray-200 bg-black/40 rounded-sm"
+                className="rounded-sm bg-black/40 px-2 py-1 text-xs font-medium text-gray-200"
               >
                 {tech}
               </span>
@@ -161,7 +161,7 @@ const ProjectCard = ({
             <InteractiveHoverButton>
               <Link
                 href={link}
-                className="inline-block text-sm text-green-300 hover:underline transition-colors duration-200"
+                className="inline-block text-sm text-green-300 transition-colors duration-200 hover:underline"
               >
                 View Project
               </Link>
@@ -177,12 +177,12 @@ const Work = () => {
   return (
     <article>
       <header className="mb-4">
-        <h1 className="text-2xl font-semibold mb-3"> Work </h1>
-        <div className="h-1 w-12 bg-green-400 rounded-md"></div>
+        <h1 className="mb-3 text-2xl font-semibold"> Work </h1>
+        <div className="h-1 w-12 rounded-md bg-green-400"></div>
       </header>
 
       <section className="mb-4">
-        <div className="flex flex-wrap gap-6 justify-start ">
+        <div className="flex flex-wrap justify-start gap-6">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}

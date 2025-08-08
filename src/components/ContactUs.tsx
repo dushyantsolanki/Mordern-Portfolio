@@ -52,14 +52,14 @@ const ContactUs = () => {
 
   return (
     <header className="mb-4">
-      <h1 className="text-2xl font-semibold mb-6"> Contact Form </h1>
+      <h1 className="mb-6 text-2xl font-semibold"> Contact Form </h1>
 
       <form className="w-full" onSubmit={handleSubmit}>
-        <div className="grid md:grid-cols-1 lg:grid-cols-2  gap-[25px] mb-[25px]">
+        <div className="mb-[25px] grid gap-[25px] md:grid-cols-1 lg:grid-cols-2">
           <input
             type="text"
             name="fullname"
-            className="text-[#F5F6F5] text-[14px] font-normal py-[13px] px-5 border border-[#383838] rounded-[14px] outline-none placeholder:font-medium  focus:border-[#57da4be1]  invalid:focus:border-[#D32F2F]"
+            className="rounded-[14px] border border-[#383838] px-5 py-[13px] text-[14px] font-normal text-[#F5F6F5] outline-none placeholder:font-medium focus:border-[#57da4be1] invalid:focus:border-[#D32F2F]"
             placeholder="Full name"
             required
             value={formData.fullname}
@@ -70,7 +70,7 @@ const ContactUs = () => {
           <input
             type="email"
             name="email"
-            className="text-[#F5F6F5] text-[14px] font-normal py-[13px] px-5 border border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#57da4be1] invalid:focus:border-[#D32F2F]"
+            className="rounded-[14px] border border-[#383838] px-5 py-[13px] text-[14px] font-normal text-[#F5F6F5] outline-none placeholder:font-medium focus:border-[#57da4be1] invalid:focus:border-[#D32F2F]"
             placeholder="Email address"
             required
             value={formData.email}
@@ -82,7 +82,7 @@ const ContactUs = () => {
 
         <textarea
           name="message"
-          className="text-[#F5F6F5] w-full text-[14px] font-normal py-[13px] px-5 border border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#57da4be1] invalid:focus:border-[#D32F2F] min-h-[100px] h-[120px] max-h-[200px] resize-y mb-[25px] "
+          className="mb-[25px] h-[120px] max-h-[200px] min-h-[100px] w-full resize-y rounded-[14px] border border-[#383838] px-5 py-[13px] text-[14px] font-normal text-[#F5F6F5] outline-none placeholder:font-medium focus:border-[#57da4be1] invalid:focus:border-[#D32F2F]"
           placeholder="Your Message"
           required
           value={formData.message}
@@ -96,12 +96,12 @@ const ContactUs = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`${loading ? 'cursor-not-allowed' : 'cursor-pointer'} relative flex justify-center items-center gap-[10px] py-[13px] px-5 rounded-[14px] text-[#07ff45c0] text-[14px] capitalize shadow-[0_16px_40px_rgba(0,0,0,0.25)] z-10 transition duration-250 ease bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:bg-[#252525ea] before:rounded-[inherit] before:z-[-1] before:transition before:duration-250 before:ease hover:bg-white/10`}
+            className={`${loading ? 'cursor-not-allowed' : 'cursor-pointer'} ease before:ease relative z-10 flex items-center justify-center gap-[10px] rounded-[14px] bg-gradient-to-br from-[#404040] to-[rgba(64,64,64,0)] px-5 py-[13px] text-[14px] text-[#07ff45c0] capitalize shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition duration-250 before:absolute before:inset-[1px] before:z-[-1] before:rounded-[inherit] before:bg-[#252525ea] before:bg-gradient-to-br before:from-[rgba(43,43,64,0.251)] before:to-[rgba(43,43,64,0)] before:transition before:duration-250 before:content-[''] hover:bg-white/10`}
           >
             {loading ? (
               <div className="flex items-center justify-center">
                 <svg
-                  className="animate-spin h-5 w-5 text-[#07ff45c0]"
+                  className="h-5 w-5 animate-spin text-[#07ff45c0]"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

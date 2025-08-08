@@ -47,12 +47,12 @@ export default function LoginForm({
   });
   return (
     <>
-      <div className="px-8 py-14 w-1/3 border border-white/20 bg-black rounded-2xl">
+      <div className="w-1/3 rounded-2xl border border-white/20 bg-black px-8 py-14">
         <FormikProvider value={formik}>
           <Form className={cn('flex flex-col gap-12', className)} {...props}>
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className="text-2xl font-bold">Welcom Back To Login </h1>
-              <p className="text-balance text-sm text-muted-foreground ">
+              <p className="text-muted-foreground text-sm text-balance">
                 Enter your email below to login to your account
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function LoginForm({
                   name="email"
                   label="Email"
                   type="email"
-                  className="h-11 border-white/10 "
+                  className="h-11 border-white/10"
                   placeholder="m@example.com "
                   icon={<Mail size={20} />}
                   value={formik.values.email}
@@ -102,7 +102,7 @@ export default function LoginForm({
               </div>
               <Button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-800 cursor-pointer"
+                className="w-full cursor-pointer bg-green-600 hover:bg-green-800"
                 disabled={formik.isSubmitting}
               >
                 {formik.isSubmitting ? (

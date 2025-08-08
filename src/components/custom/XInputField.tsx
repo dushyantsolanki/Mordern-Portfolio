@@ -31,7 +31,7 @@ export const XInputField = ({
       )}
       <div className="relative w-full">
         {icon && (
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+          <div className="text-muted-foreground absolute top-1/2 left-3 -translate-y-1/2">
             {icon}
           </div>
         )}
@@ -45,7 +45,7 @@ export const XInputField = ({
           )}
         />
       </div>
-      {error && <p className="ml-1 text-sm text-red-500 mt-1.5">{error}</p>}
+      {error && <p className="mt-1.5 ml-1 text-sm text-red-500">{error}</p>}
     </div>
   );
 };
