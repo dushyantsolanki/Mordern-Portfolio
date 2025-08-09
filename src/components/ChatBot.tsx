@@ -94,7 +94,7 @@ const ChatBot: React.FC = () => {
     return (
         <>
             {/* Floating Chat Button */}
-            <div className="fixed bottom-20 right-6 z-50">
+            <div className="fixed hidden md:block bottom-20 right-6 z-50">
                 <button
                     onClick={() => { setIsOpen(true); setIsMinimized(false); }}
                     className={`relative w-16 h-16 bg-white/10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center border border-black/50 backdrop-blur-sm ${isOpen && !isMinimized ? 'hidden' : 'block'}`}
