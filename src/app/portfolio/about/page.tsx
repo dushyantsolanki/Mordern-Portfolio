@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     'Gandhinagar',
     'Ahmedabad',
     'Modern Portfolio',
+    "7623057936",
     'About MERN Developer',
     'MERN Stack Developer',
     'React Developer',

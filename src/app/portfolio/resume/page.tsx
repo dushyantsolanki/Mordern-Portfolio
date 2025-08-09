@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     'Ahmedabad',
     'Portfolio',
     'Modern Portfolio',
+    "7623057936",
     'MERN Stack Developer Resume',
     'React Developer Resume',
     'Full Stack Developer CV',

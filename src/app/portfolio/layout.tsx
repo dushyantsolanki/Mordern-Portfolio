@@ -522,7 +522,7 @@ export default function RootLayout({
         </motion.div>
       </div>
 
-      <ChatBot />
+      {/* <ChatBot /> */}
       {/* Bottom Navigation for Mobile */}
       <BottomNavigation
         count={count}
