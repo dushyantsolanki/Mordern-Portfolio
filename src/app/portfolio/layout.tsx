@@ -26,7 +26,7 @@ const profileData = {
   title: 'Full Stack Developer',
   avatar: '/myavatar.png',
   email: 'dushyantsolanki.dev@gmail.com',
-  phone: '+91 7823057936',
+  phone: '+91 7623057936',
   birthday: 'Sept 22, 2002',
   location: 'Ahmedabad, Gujarat, IND',
 };
@@ -522,7 +522,7 @@ export default function RootLayout({
         </motion.div>
       </div>
 
-      {/* <ChatBot /> */}
+      <ChatBot />
       {/* Bottom Navigation for Mobile */}
       <BottomNavigation
         count={count}
