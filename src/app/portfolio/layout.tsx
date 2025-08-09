@@ -19,6 +19,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { NumberTicker } from '@/components/NumberTiker';
+import ChatBot from '@/components/ChatBot';
 
 const profileData = {
   name: 'Dushyant Solanki',
@@ -426,9 +427,8 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
-                    isActive ? 'text-white' : 'text-green-500'
-                  }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${isActive ? 'text-white' : 'text-green-500'
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -522,6 +522,7 @@ export default function RootLayout({
         </motion.div>
       </div>
 
+      <ChatBot />
       {/* Bottom Navigation for Mobile */}
       <BottomNavigation
         count={count}
