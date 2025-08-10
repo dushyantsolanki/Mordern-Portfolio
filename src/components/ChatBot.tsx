@@ -5,7 +5,6 @@ import {
     X,
     Minimize2,
     Maximize2,
-    Send,
     Bot,
     SendHorizontal,
 } from 'lucide-react';
@@ -18,12 +17,14 @@ interface Message {
 }
 
 const ChatBot: React.FC = () => {
+    const [isClient, setIsClient] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
             id: Math.random(),
-            text: '<p>🌟 I am Shree, an intelligent AI assistant created by Dushyant Sir 👨\u200d💻. My purpose is to help you by providing information based on the documents I have access to.</p>',
+            text: '<p>🌟 I am Shree, an intelligent AI assistant created by Dushyant Sir 👨‍💻. My purpose is to help you by providing information based on the documents I have access to.</p>',
             sender: 'ai',
             timestamp: new Date(),
         },
@@ -32,6 +33,20 @@ const ChatBot: React.FC = () => {
     const [isTyping, setIsTyping] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+
+    // Handle client-side mounting and screen size detection
+    useEffect(() => {
+        setIsClient(true);
+
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -54,9 +69,9 @@ const ChatBot: React.FC = () => {
     const getAIResponse = (userMessage: string): Promise<string> => {
         const authHeader =
             'Basic ' +
-            Buffer.from(
+            btoa(
                 `${process.env.NEXT_PUBLIC_WEBHOOK_USER}:${process.env.NEXT_PUBLIC_WEBHOOK_PASS}`
-            ).toString('base64');
+            );
 
         return fetch(
             'https://n8n-production-8470.up.railway.app/webhook/60f84815-c801-4af0-9fac-66368a73d0b0',
@@ -76,12 +91,16 @@ const ChatBot: React.FC = () => {
                 return response.json();
             })
             .then(response => {
-                console.log('2nd then :: ', response);
-                return response[0]?.output;
+                console.log('AI Response :: ', response);
+                return response[0]?.output || 'I apologize, but I couldn\'t process your request at the moment.';
+            })
+            .catch(error => {
+                console.error('AI Fetch Error:', error);
+                return 'I\'m experiencing technical difficulties. Please try again later.';
             });
     };
 
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (inputValue.trim() === '') return;
 
         const newUserMessage: Message = {
@@ -95,29 +114,27 @@ const ChatBot: React.FC = () => {
         setInputValue('');
         setIsTyping(true);
 
-        getAIResponse(newUserMessage.text)
-            .then(aiText => {
-                const aiResponse: Message = {
-                    id: Date.now() + 1,
-                    text: aiText,
-                    sender: 'ai',
-                    timestamp: new Date(),
-                };
-                setMessages(prev => [...prev, aiResponse]);
-            })
-            .catch(error => {
-                console.error('AI Fetch Error:', error);
-                const errorMessage: Message = {
-                    id: Date.now() + 1,
-                    text: 'Failed to get AI response.',
-                    sender: 'ai',
-                    timestamp: new Date(),
-                };
-                setMessages(prev => [...prev, errorMessage]);
-            })
-            .finally(() => {
-                setIsTyping(false);
-            });
+        try {
+            const aiText = await getAIResponse(newUserMessage.text);
+            const aiResponse: Message = {
+                id: Date.now() + 1,
+                text: aiText,
+                sender: 'ai',
+                timestamp: new Date(),
+            };
+            setMessages(prev => [...prev, aiResponse]);
+        } catch (error) {
+            console.error('AI Fetch Error:', error);
+            const errorMessage: Message = {
+                id: Date.now() + 1,
+                text: 'I apologize, but I\'m experiencing technical difficulties. Please try again later.',
+                sender: 'ai',
+                timestamp: new Date(),
+            };
+            setMessages(prev => [...prev, errorMessage]);
+        } finally {
+            setIsTyping(false);
+        }
     };
 
     const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -126,6 +143,11 @@ const ChatBot: React.FC = () => {
             handleSendMessage();
         }
     };
+
+    // Don't render on server or mobile
+    if (!isClient || isMobile) {
+        return null;
+    }
 
     return (
         <>
@@ -140,20 +162,23 @@ const ChatBot: React.FC = () => {
                     aria-label="Open chatbot"
                 >
                     <Bot className="w-8 h-8 text-green-500" />
+
+                    {/* Online indicator */}
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-black animate-pulse"></div>
                 </button>
             </div>
 
             {/* Chat Window */}
             <div
-                className={`fixed bottom-20  right-6 z-50 w-96 max-w-[calc(100vw-3rem)] transition-all duration-200 transform ${isOpen
-                        ? 'scale-100 opacity-100 pointer-events-auto'
-                        : 'scale-95 opacity-0 pointer-events-none'
+                className={`fixed bottom-20 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] transition-all duration-300 transform ${isOpen
+                    ? 'scale-100 opacity-100 pointer-events-auto'
+                    : 'scale-95 opacity-0 pointer-events-none'
                     }`}
                 role="dialog"
                 aria-labelledby="chatbot-title"
             >
                 <div
-                    className={`border border-gray-700/50 shadow-2xl rounded-2xl overflow-hidden transition-all duration-200 ${isMinimized ? 'h-[70px]' : 'h-[550px'}`}
+                    className={`border border-gray-700/50 shadow-2xl rounded-2xl overflow-hidden backdrop-blur-xl bg-black/20 transition-all duration-200 ${isMinimized ? 'h-[70px]' : 'h-[550px]'}`}
                 >
                     {/* Header - Fixed height with perfect vertical centering */}
                     <div className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl border-b border-gray-700/50 h-[70px] flex items-center px-4">
@@ -161,7 +186,7 @@ const ChatBot: React.FC = () => {
                             <div className="flex items-center space-x-3">
                                 <div className="relative w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-md overflow-hidden">
                                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                                        <img src="/avatar-2.png" alt="no" />
+                                        <img src="/avatar-2.png" alt="Shree AI Avatar" className="w-full h-full object-cover rounded-full" />
                                     </div>
                                 </div>
                                 <div>
@@ -172,7 +197,7 @@ const ChatBot: React.FC = () => {
                                         Shree AI (Beta)
                                     </h3>
                                     <p className="text-green-400 text-xs font-medium flex items-center gap-1.5">
-                                        <span className="w-1.5 h-1.5 bg-green-400 rounded-full "></span>
+                                        <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
                                         Online
                                     </p>
                                 </div>
@@ -210,9 +235,9 @@ const ChatBot: React.FC = () => {
                                 >
                                     <div
                                         className={`max-w-[75%] px-4 py-3 relative shadow-md ${message.sender === 'user'
-                                                ? 'bg-green-800/30 text-white rounded-tr-none rounded-tl-2xl rounded-bl-2xl rounded-br-2xl'
-                                                : 'bg-gray-600/30 text-white rounded-tr-2xl rounded-tl-none rounded-br-2xl rounded-bl-md'
-                                            } backdrop-blur-sm`}
+                                            ? 'bg-green-800/30 text-white rounded-tr-none rounded-tl-2xl rounded-bl-2xl rounded-br-2xl'
+                                            : 'bg-gray-600/30 text-white rounded-tr-2xl rounded-tl-none rounded-br-2xl rounded-bl-md'
+                                            } backdrop-blur-sm border border-white/10`}
                                     >
                                         <div
                                             className="text-sm leading-relaxed space-y-2 
@@ -222,14 +247,14 @@ const ChatBot: React.FC = () => {
               [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1
               [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1
               [&_li]:text-gray-200
-              [&_strong]:font-semibold
+              [&_strong]:font-semibold [&_strong]:text-white
               [&_em]:italic"
                                             dangerouslySetInnerHTML={{ __html: message.text }}
                                         />
                                         <p
                                             className={`text-xs text-right mt-2 ${message.sender === 'user'
-                                                    ? 'text-green-100'
-                                                    : 'text-gray-300'
+                                                ? 'text-green-100'
+                                                : 'text-gray-300'
                                                 }`}
                                         >
                                             {formatTime(message.timestamp)}
@@ -241,7 +266,7 @@ const ChatBot: React.FC = () => {
                             {/* Typing indicator */}
                             {isTyping && (
                                 <div className="flex justify-start mb-3">
-                                    <div className="bbg-green-800/30 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 shadow-md">
+                                    <div className="bg-gray-600/30 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 shadow-md border border-white/10">
                                         <div className="flex space-x-1">
                                             <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                                             <div
@@ -262,7 +287,7 @@ const ChatBot: React.FC = () => {
 
                     {/* Input Area - Fixed height with perfect vertical centering */}
                     {!isMinimized && (
-                        <div className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl  border-t border-gray-700/50 h-[80px] flex items-center px-4">
+                        <div className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl border-t border-gray-700/50 h-[80px] flex items-center px-4">
                             <div className="flex items-center space-x-3 w-full">
                                 <div className="flex-1 relative">
                                     <input
@@ -272,17 +297,18 @@ const ChatBot: React.FC = () => {
                                         onChange={e => setInputValue(e.target.value)}
                                         onKeyPress={handleKeyPress}
                                         placeholder="Type your message..."
-                                        className="w-full bg-gray-700/5 backdrop-blur-sm border border-gray-600/50 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:bg-gray-700/10 transition-all duration-150 placeholder-gray-400 text-white"
+                                        className="w-full bg-gray-700/20 backdrop-blur-sm border border-gray-600/50 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:bg-gray-700/30 transition-all duration-150 placeholder-gray-400 text-white"
                                         aria-label="Chat input"
+                                        disabled={isTyping}
                                     />
                                 </div>
                                 <button
                                     onClick={handleSendMessage}
-                                    disabled={inputValue.trim() === ''}
+                                    disabled={inputValue.trim() === '' || isTyping}
                                     className="w-11 h-11 bg-green-500 rounded-sm flex items-center justify-center text-white hover:bg-green-600 hover:scale-105 transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-md border border-green-400/50"
                                     aria-label="Send message"
                                 >
-                                    <SendHorizontal className="w-6 h-6 " />
+                                    <SendHorizontal className="w-6 h-6" />
                                 </button>
                             </div>
                         </div>

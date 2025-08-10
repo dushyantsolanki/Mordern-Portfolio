@@ -427,9 +427,8 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
-                    isActive ? 'text-white' : 'text-green-500'
-                  }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${isActive ? 'text-white' : 'text-green-500'
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -449,6 +448,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
   const [count, setCount] = useState<number>(0);
@@ -469,6 +469,7 @@ export default function RootLayout({
     }
   };
 
+
   const checkViewport = () => {
     const mobileWidth = 768;
     setIsMobile(window.innerWidth < mobileWidth);
@@ -476,16 +477,32 @@ export default function RootLayout({
 
   useEffect(() => {
     checkViewport();
-    window.addEventListener('resize', checkViewport);
+    window.addEventListener("resize", checkViewport);
 
     return () => {
-      window.removeEventListener('resize', checkViewport);
+      window.removeEventListener("resize", checkViewport);
     };
+  }, []);
+  useEffect(() => {
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
-    analytics();
-  }, []);
+    if (isClient) {
+      analytics();
+    }
+  }, [isClient]);
+
+  // Prevent rendering until client-side
+  if (!isClient) {
+    return (
+      <div className="min-h-screen w-full bg-black">
+        <div className="flex h-screen items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-green-500 border-t-transparent"></div>
+        </div>
+      </div>
+    );
+  }
   return (
     <main className="min-h-screen">
       {/* Mobile Header */}
@@ -506,8 +523,8 @@ export default function RootLayout({
         <div className="px-8">
           <motion.div
             className="min-h-screen rounded-xl rounded-t-none border-2 border-t-0 border-white/10 bg-white/5 p-8"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             {children}
