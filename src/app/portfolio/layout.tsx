@@ -423,7 +423,7 @@ function DesktopNavigation({
   toggleChatBot: () => void;
 }) {
   return (
-    <nav className="z-50 flex w-full items-center justify-center">
+    <nav className="z-50 mt-2 sticky bottom-1 flex w-full items-center justify-center">
       <motion.div
         className="flex h-18 items-center rounded-3xl border border-amber-100/10 bg-white/10 px-8 backdrop-blur-sm"
         initial={{ y: -50, opacity: 0 }}
@@ -455,9 +455,8 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
-                    isActive ? 'text-white' : 'text-green-500'
-                  }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${isActive ? 'text-white' : 'text-green-500'
+                    }`}
                 >
                   {link.name}
                 </Link>
