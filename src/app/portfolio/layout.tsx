@@ -427,8 +427,9 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${isActive ? 'text-white' : 'text-green-500'
-                    }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
+                    isActive ? 'text-white' : 'text-green-500'
+                  }`}
                 >
                   {link.name}
                 </Link>
@@ -447,6 +448,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMobile, setIsMobile] = useState(false);
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
   const [count, setCount] = useState<number>(0);
@@ -466,6 +468,20 @@ export default function RootLayout({
       console.log('Analytics :: ', error);
     }
   };
+
+  const checkViewport = () => {
+    const mobileWidth = 768;
+    setIsMobile(window.innerWidth < mobileWidth);
+  };
+
+  useEffect(() => {
+    checkViewport();
+    window.addEventListener('resize', checkViewport);
+
+    return () => {
+      window.removeEventListener('resize', checkViewport);
+    };
+  }, []);
 
   useEffect(() => {
     analytics();
@@ -522,7 +538,7 @@ export default function RootLayout({
         </motion.div>
       </div>
 
-      {/* <ChatBot /> */}
+      {!isMobile ? <ChatBot /> : null}
       {/* Bottom Navigation for Mobile */}
       <BottomNavigation
         count={count}

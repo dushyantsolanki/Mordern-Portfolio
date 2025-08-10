@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'MongoDB',
     'Full Stack',
     'Dushyant Solanki',
-    "7623057936",
+    '7623057936',
   ],
   openGraph: {
     title: 'Dushyant Solanki - Work',
