@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: 'Portfolio of Dushyant Solanki',
     images: [
       {
-        url: '/myavatar_imresizer.jpg', // Make sure this exists in /public
+        url: '/open_graph.png', // Make sure this exists in /public
         width: 1200,
         height: 630,
         alt: 'Dushyant Solanki - MERN Developer',

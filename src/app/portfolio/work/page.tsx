@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Dushyant Solanki Portfolio',
     images: [
       {
-        url: '/myavatar_imresizer.jpg',
+        url: '/open_graph.png',
         width: 1200,
         height: 630,
         alt: 'Dushyant Solanki Portfolio',
