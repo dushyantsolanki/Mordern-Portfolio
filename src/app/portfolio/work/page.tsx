@@ -46,6 +46,24 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    name: 'Shree AI Agent',
+    description:
+      'I built Shree AI Agent for my portfolio—an intelligent assistant that lets users ask questions and get instant, smart answers right on the site. Simple, helpful, and interactive.',
+    technologies: [
+      'n8n',
+      'supabase',
+      'gemini',
+      'embeddings',
+      'vector store',
+      'google apis',
+      'google drive',
+      'webhook',
+      'Mongo DB',
+      'Personal',
+    ],
+    image: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg',
+  },
+  {
     name: 'Task Mate',
     description:
       'Task Mate is a personal productivity project featuring an AI- powered web search assistant, smart event reminders, and task management.Built for flexibility, it allows adding custom features as needed—making it a versatile tool for daily organization and planning.',

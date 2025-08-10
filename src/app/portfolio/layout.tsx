@@ -602,11 +602,11 @@ export default function RootLayout({
       <AnimatePresence>
         {isChatBotOpen && (
           <motion.div
-            className="fixed bottom-20 right-4 z-50 w-full max-w-[400px] sm:max-w-[400px]"
-            initial={{ opacity: 0, y: 100 }}
+            className="fixed bottom-0 right-4 z-50 w-full max-w-[400px] sm:max-w-[400px]"
+            initial={{ opacity: 1, y: 100, x: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            exit={{ opacity: 0, y: 100, }}
+            transition={{ duration: 0.3, ease: 'linear' }}
           >
             <ChatBot isOpen={isChatBotOpen} setIsOpen={setIsChatBotOpen} />
           </motion.div>

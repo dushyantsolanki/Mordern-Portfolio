@@ -5,10 +5,9 @@ import {
     X,
     Minimize2,
     Maximize2,
-    Send,
-    Bot,
     SendHorizontal,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface Message {
     id: number;
@@ -143,8 +142,15 @@ const ChatBot = ({
                 role="dialog"
                 aria-labelledby="chatbot-title"
             >
-                <div
-                    className={`border border-gray-700/50 shadow-2xl rounded-2xl overflow-hidden transition-all duration-200 ${isMinimized ? 'h-[70px]' : 'h-[550px'}`}
+                <motion.div
+                    className="border border-gray-700/50 shadow-2xl rounded-2xl overflow-hidden"
+                    animate={{
+                        height: isMinimized ? 70 : 550
+                    }}
+                    transition={{
+                        duration: 0.4,
+                        ease: "easeInOut"
+                    }}
                 >
                     {/* Header - Fixed height with perfect vertical centering */}
                     <div className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl border-b border-gray-700/50 h-[70px] flex items-center px-4">
@@ -192,68 +198,96 @@ const ChatBot = ({
                     </div>
 
                     {/* Messages Area */}
-                    {!isMinimized && (
-                        <div className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-3 h-[400px] bg-gradient-to-br from-black/20 to-black/20 backdrop-blur-md">
-                            {messages.map(message => (
-                                <div
-                                    key={message.id}
-                                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-3`}
-                                >
+                    <motion.div
+                        className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-3 h-[400px] bg-gradient-to-br from-black/20 to-black/20 backdrop-blur-md"
+                        animate={{
+                            opacity: isMinimized ? 0 : 1,
+                            height: isMinimized ? 0 : 400
+                        }}
+                        transition={{
+                            duration: 0.4,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            overflow: isMinimized ? 'hidden' : 'auto'
+                        }}
+                    >
+                        {!isMinimized && (
+                            <>
+                                {messages.map(message => (
                                     <div
-                                        className={`max-w-[75%] px-4 py-3 relative shadow-md ${message.sender === 'user'
-                                            ? 'bg-green-800/30 text-white rounded-tr-none rounded-tl-2xl rounded-bl-2xl rounded-br-2xl'
-                                            : 'bg-gray-600/30 text-white rounded-tr-2xl rounded-tl-none rounded-br-2xl rounded-bl-md'
-                                            } backdrop-blur-sm`}
+                                        key={message.id}
+                                        className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-3`}
                                     >
                                         <div
-                                            className="text-sm leading-relaxed space-y-2 
-              [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:mb-2 
-              [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:mb-1
-              [&_p]:text-gray-200 [&_p]:mb-2
-              [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1
-              [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1
-              [&_li]:text-gray-200
-              [&_strong]:font-semibold
-              [&_em]:italic"
-                                            dangerouslySetInnerHTML={{ __html: message.text }}
-                                        />
-                                        <p
-                                            className={`text-xs text-right mt-2 ${message.sender === 'user'
-                                                ? 'text-green-100'
-                                                : 'text-gray-300'
-                                                }`}
+                                            className={`max-w-[75%] px-4 py-3 relative shadow-md ${message.sender === 'user'
+                                                ? 'bg-green-800/30 text-white rounded-tr-none rounded-tl-2xl rounded-bl-2xl rounded-br-2xl'
+                                                : 'bg-gray-600/30 text-white rounded-tr-2xl rounded-tl-none rounded-br-2xl rounded-bl-md'
+                                                } backdrop-blur-sm`}
                                         >
-                                            {formatTime(message.timestamp)}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-
-                            {/* Typing indicator */}
-                            {isTyping && (
-                                <div className="flex justify-start mb-3">
-                                    <div className="bbg-green-800/30 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 shadow-md">
-                                        <div className="flex space-x-1">
-                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                                             <div
-                                                className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                                                style={{ animationDelay: '0.1s' }}
-                                            ></div>
-                                            <div
-                                                className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                                                style={{ animationDelay: '0.2s' }}
-                                            ></div>
+                                                className="text-sm leading-relaxed space-y-2 
+                  [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:mb-2 
+                  [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:mb-1
+                  [&_p]:text-gray-200 [&_p]:mb-2
+                  [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1
+                  [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1
+                  [&_li]:text-gray-200
+                  [&_strong]:font-semibold
+                  [&_em]:italic"
+                                                dangerouslySetInnerHTML={{ __html: message.text }}
+                                            />
+                                            <p
+                                                className={`text-xs text-right mt-2 ${message.sender === 'user'
+                                                    ? 'text-green-100'
+                                                    : 'text-gray-300'
+                                                    }`}
+                                            >
+                                                {formatTime(message.timestamp)}
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                            )}
-                            <div ref={messagesEndRef} />
-                        </div>
-                    )}
+                                ))}
+
+                                {/* Typing indicator */}
+                                {isTyping && (
+                                    <div className="flex justify-start mb-3">
+                                        <div className="bg-gray-600/30 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 shadow-md">
+                                            <div className="flex space-x-1">
+                                                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                                <div
+                                                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                                                    style={{ animationDelay: '0.1s' }}
+                                                ></div>
+                                                <div
+                                                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                                                    style={{ animationDelay: '0.2s' }}
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                                <div ref={messagesEndRef} />
+                            </>
+                        )}
+                    </motion.div>
 
                     {/* Input Area - Fixed height with perfect vertical centering */}
-                    {!isMinimized && (
-                        <div className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl  border-t border-gray-700/50 h-[80px] flex items-center px-4">
+                    <motion.div
+                        className="bg-gradient-to-br from-green-400/5 to-green-600/5 backdrop-blur-xl border-t border-gray-700/50 h-[80px] flex items-center px-4"
+                        animate={{
+                            opacity: isMinimized ? 0 : 1,
+                            height: isMinimized ? 0 : 80
+                        }}
+                        transition={{
+                            duration: 0.4,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            overflow: isMinimized ? 'hidden' : 'visible'
+                        }}
+                    >
+                        {!isMinimized && (
                             <div className="flex items-center space-x-3 w-full">
                                 <div className="flex-1 relative">
                                     <input
@@ -276,9 +310,9 @@ const ChatBot = ({
                                     <SendHorizontal className="w-6 h-6 " />
                                 </button>
                             </div>
-                        </div>
-                    )}
-                </div>
+                        )}
+                    </motion.div>
+                </motion.div>
             </div>
         </>
     );

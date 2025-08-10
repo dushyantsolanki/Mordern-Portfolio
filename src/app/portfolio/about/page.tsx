@@ -171,6 +171,11 @@ const About = () => {
       name: 'Firebase',
       url: 'https://www.svgrepo.com/show/353735/firebase.svg',
     },
+    {
+      name: 'N8N',
+      url: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg',
+    },
+
   ];
 
   return (
