@@ -10,7 +10,7 @@ import {
   Phone,
   Menu,
   X,
-  LogInIcon,
+  Bot,
 } from 'lucide-react';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
@@ -103,7 +103,6 @@ function Sidebar({ count }: { count: number }) {
               href="https://www.instagram.com/dushyantsolanky/"
               icon={Instagram}
             />
-            {/* <SocialLink href="/admin/login" icon={LogInIcon} /> */}
           </div>
         </div>
 
@@ -314,7 +313,6 @@ function MobileHeader({
                   href="https://www.instagram.com/dushyantsolanky/"
                   icon={Instagram}
                 />
-                {/* <SocialLink href="/admin/login" icon={LogInIcon} /> */}
               </div>
             </div>
           </motion.div>
@@ -330,18 +328,22 @@ function BottomNavigation({
   pathname,
   hovered,
   setHovered,
+  toggleChatBot,
+  isChatBotOpen,
 }: {
   count: number;
   pathname: string;
   hovered: string | null;
   setHovered: (arg: string | null) => void;
+  toggleChatBot: () => void;
+  isChatBotOpen: boolean;
 }) {
   return (
     <nav className="fixed bottom-0 left-1/2 z-50 w-full -translate-x-1/2 transform lg:hidden">
       <motion.div
         className="overflow-hidden rounded-2xl rounded-b-none border border-b-0 border-amber-100/10 bg-white/10 px-4 py-4 backdrop-blur-sm"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <ul className="flex w-full min-w-0 items-center justify-between">
@@ -366,7 +368,6 @@ function BottomNavigation({
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
-
                 <Link
                   href={link.href}
                   className={`relative z-10 flex w-full items-center justify-center truncate px-2 py-3 text-xs font-medium transition-all sm:text-sm ${isActive ? 'text-white' : 'text-green-500'}`}
@@ -376,6 +377,29 @@ function BottomNavigation({
               </motion.li>
             );
           })}
+          <motion.li
+            key="chatbot"
+            className="relative min-w-0 flex-1"
+            onMouseEnter={() => setHovered('chatbot')}
+            onMouseLeave={() => setHovered(null)}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
+          >
+            {(isChatBotOpen || hovered === 'chatbot') && (
+              <motion.div
+                layoutId="mobile-nav-highlight"
+                className="absolute inset-x-1 top-1/2 h-10 -translate-y-1/2 rounded-xl border border-white/20 bg-black/10"
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              />
+            )}
+            <button
+              onClick={toggleChatBot}
+              className={`relative z-10 flex w-full items-center justify-center truncate px-2 py-3 text-xs font-medium transition-all sm:text-sm ${isChatBotOpen ? 'text-white' : 'text-green-500'}`}
+            >
+              <Bot className="h-5 w-5" />
+            </button>
+          </motion.li>
         </ul>
       </motion.div>
     </nav>
@@ -388,16 +412,20 @@ function DesktopNavigation({
   pathname,
   hovered,
   setHovered,
+  isChatBotOpen,
+  toggleChatBot,
 }: {
   count: number;
   pathname: string;
   hovered: string | null;
   setHovered: (arg: string | null) => void;
+  isChatBotOpen: boolean;
+  toggleChatBot: () => void;
 }) {
   return (
-    <nav className="sticky bottom-2 z-50 mt-4 flex w-full items-center justify-center lg:flex">
+    <nav className="z-50 flex w-full items-center justify-center">
       <motion.div
-        className="flex h-18 items-center rounded-4xl border border-amber-100/10 bg-white/10 px-8 backdrop-blur-sm"
+        className="flex h-18 items-center rounded-3xl border border-amber-100/10 bg-white/10 px-8 backdrop-blur-sm"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -427,15 +455,38 @@ function DesktopNavigation({
 
                 <Link
                   href={link.href}
-                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${isActive ? 'text-white' : 'text-green-500'
-                    }`}
+                  className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium ${
+                    isActive ? 'text-white' : 'text-green-500'
+                  }`}
                 >
                   {link.name}
                 </Link>
               </motion.li>
             );
           })}
-          {/* <NumberTicker value={count} format="youtube" /> */}
+          <motion.li
+            key="chatbot"
+            className="relative"
+            onMouseEnter={() => setHovered('chatbot')}
+            onMouseLeave={() => setHovered(null)}
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
+          >
+            {(isChatBotOpen || hovered === 'chatbot') && (
+              <motion.div
+                layoutId="nav-highlight"
+                className="absolute inset-x-0 top-1/2 h-10 -translate-y-1/2 rounded-xl border border-white/20 bg-black/10"
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              />
+            )}
+            <button
+              onClick={toggleChatBot}
+              className={`relative z-10 flex items-center justify-center px-5 py-3 text-lg font-medium transition-all ${isChatBotOpen ? 'text-white' : 'text-green-500'}`}
+            >
+              <Bot className="h-6 w-6 mr-1" /> Shree
+            </button>
+          </motion.li>
         </ul>
       </motion.div>
     </nav>
@@ -452,7 +503,8 @@ export default function RootLayout({
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
   const [count, setCount] = useState<number>(0);
-  let pathname = usePathname();
+  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
+  const pathname = usePathname();
 
   const analytics = async () => {
     try {
@@ -469,20 +521,10 @@ export default function RootLayout({
     }
   };
 
-
-  const checkViewport = () => {
-    const mobileWidth = 768;
-    setIsMobile(window.innerWidth < mobileWidth);
+  const toggleChatBot = () => {
+    setIsChatBotOpen(prev => !prev);
   };
 
-  useEffect(() => {
-    checkViewport();
-    window.addEventListener("resize", checkViewport);
-
-    return () => {
-      window.removeEventListener("resize", checkViewport);
-    };
-  }, []);
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -504,7 +546,7 @@ export default function RootLayout({
     );
   }
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       {/* Mobile Header */}
       <MobileHeader
         isExpanded={isMobileExpanded}
@@ -513,7 +555,7 @@ export default function RootLayout({
       />
 
       {/* Desktop Layout */}
-      <div className="hidden min-h-screen lg:grid lg:grid-cols-[350px_1fr] lg:grid-rows-[auto_1fr]">
+      <div className="hidden min-h-screen lg:grid lg:grid-cols-[350px_1fr] lg:grid-rows-[1fr_auto]">
         {/* Desktop Sidebar */}
         <div className="row-span-2 border border-amber-100/10 bg-white/5">
           <Sidebar count={count} />
@@ -537,6 +579,8 @@ export default function RootLayout({
           pathname={pathname}
           hovered={hovered}
           setHovered={setHovered}
+          toggleChatBot={toggleChatBot}
+          isChatBotOpen={isChatBotOpen}
         />
       </div>
 
@@ -555,13 +599,29 @@ export default function RootLayout({
         </motion.div>
       </div>
 
-      {!isMobile ? <ChatBot /> : null}
+      {/* ChatBot Toggle for Mobile */}
+      <AnimatePresence>
+        {isChatBotOpen && (
+          <motion.div
+            className="fixed bottom-20 right-4 z-50 w-full max-w-[400px] sm:max-w-[400px]"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <ChatBot isOpen={isChatBotOpen} setIsOpen={setIsChatBotOpen} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Bottom Navigation for Mobile */}
       <BottomNavigation
         count={count}
         pathname={pathname}
         hovered={hovered}
         setHovered={setHovered}
+        toggleChatBot={toggleChatBot}
+        isChatBotOpen={isChatBotOpen}
       />
     </main>
   );
