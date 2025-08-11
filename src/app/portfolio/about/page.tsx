@@ -236,7 +236,7 @@ const About = () => {
           <div>
             <div className="mb-4 flex h-64 w-64 items-center justify-center rounded-2xl bg-white/10 text-4xl">
               <Image
-                src="/myavatar.png"
+                src="/OG.svg"
                 alt="Profile Picture"
                 height={600}
                 width={600}
