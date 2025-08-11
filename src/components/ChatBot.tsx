@@ -168,7 +168,7 @@ const ChatBot = ({
                                     >
                                         Shree AI (Beta)
                                     </h3>
-                                    <p className="text-green-400 text-xs font-medium flex items-center gap-1.5">
+                                    <p className="text-red-400 text-xs font-medium flex items-center gap-1.5">
                                         <span className="w-1.5 h-1.5 bg-red-400 rounded-full "></span>
                                         Offline
                                     </p>
