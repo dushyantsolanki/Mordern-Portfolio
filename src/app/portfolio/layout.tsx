@@ -41,7 +41,7 @@ const navLinks = [
 // Sidebar Component
 function Sidebar({ count }: { count: number }) {
   return (
-    <div className="fixed top-4 flex min-h-screen flex-col">
+    <div className="fixed top-4 flex h-screen scrollbar-hide overflow-y-auto  flex-col">
       {/* Profile Header */}
       <div className="flex flex-col items-center p-8">
         <div className="mb-4 flex h-40 w-40 items-center justify-center rounded-2xl bg-white/10 text-4xl">
@@ -107,7 +107,7 @@ function Sidebar({ count }: { count: number }) {
         </div>
 
         <div className="hidden justify-center lg:flex">
-          <div className="w-1/2 rounded-2xl border border-white/20 bg-black/20 p-3 text-center text-4xl shadow-2xl">
+          <div className="w-1/2 rounded-2xl border border-white/20 bg-black/20 p-3 mb-2 text-center text-4xl shadow-2xl">
             <NumberTicker value={count} format="youtube" />
           </div>
         </div>

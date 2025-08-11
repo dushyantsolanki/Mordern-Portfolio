@@ -63,7 +63,7 @@ const ChatBot = ({
             ).toString('base64');
 
         return fetch(
-            'https://n8n-production-8470.up.railway.app/webhook/60f84815-c801-4af0-9fac-66368a73d0b0',
+            'https://n8n-j0ri.onrender.com/webhook/bf026618-cf64-4c6e-89c6-4d6b1f7d01e1',
             {
                 method: 'POST',
                 headers: {
