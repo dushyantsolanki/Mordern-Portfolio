@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     'Full Stack Developer',
     'Freelance Web Developer',
     'Next.js Portfolio',
+    'dushyantsolanki.dev@gmail.com',
+    '7623057936'
   ],
   creator: 'Dushyant Solanki',
   publisher: 'Dushyant Solanki',
