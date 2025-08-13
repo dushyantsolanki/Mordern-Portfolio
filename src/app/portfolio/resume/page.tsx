@@ -212,7 +212,7 @@ const Resume = () => {
           <div className="mt-12">
             <h2 className="mb-8 text-2xl font-bold">Skills</h2>
 
-            <div className="rounded-2xl border border-white/20 p-8 text-white shadow-md shadow-black/5">
+            <div className="rounded-2xl  text-white shadow-md shadow-black/5">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {skills.map((skill, index) => (
                   <div key={index} className="mb-4">
