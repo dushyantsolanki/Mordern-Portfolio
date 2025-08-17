@@ -179,49 +179,7 @@ const About = () => {
 
   ];
 
-  const sitelinksData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Dushyant Solanki",
-    "url": "https://portfolio-dev-dushyant.vercel.app",
-    "potentialAction": [
-      {
-        "@type": "SearchAction",
-        "target": "https://portfolio-dev-dushyant.vercel.app/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    ],
-    "about": {
-      "@type": "WebPage",
-      "name": "About",
-      "url": "https://portfolio-dev-dushyant.vercel.app/portfolio/about"
-    },
-    "resume": {
-      "@type": "WebPage",
-      "name": "Resume",
-      "url": "https://portfolio-dev-dushyant.vercel.app/portfolio/resume"
-    },
-
-    "work": {
-      "@type": "WebPage",
-      "name": "Work",
-      "url": "https://portfolio-dev-dushyant.vercel.app/portfolio/work"
-    },
-    "contact": {
-      "@type": "WebPage",
-      "name": "Contact",
-      "url": "https://portfolio-dev-dushyant.vercel.app/portfolio/contact"
-    }
-  };
-  return (<>
-    <Script
-      id="sitelinks-structured-data"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(sitelinksData),
-      }}
-    />
-
+  return (
     <article>
       <header className="mb-4">
         <h1 className="mb-3 text-2xl font-semibold"> About Me </h1>
@@ -326,8 +284,6 @@ const About = () => {
         </section>
       </div>
     </article>
-
-  </>
   );
 };
 
