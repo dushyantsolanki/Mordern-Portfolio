@@ -77,7 +77,7 @@ const projects = [
       'Socket.io',
       'Personal',
     ],
-    link: 'https://task-app-wfv1.onrender.com',
+    link: 'https://taskmate.dushyantportfolio.store',
     image: '/taskmate.png',
   },
   {
