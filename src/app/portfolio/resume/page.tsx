@@ -125,7 +125,7 @@ const Resume = () => {
                     Lemolite Technologies LLP
                   </h3>
                   <p className="mb-3 text-sm text-gray-400">
-                    Aug 2024 - May 2025{' '}
+                    Aug 2024 - Aug 2025{' '}
                   </p>
                   <span className="rounded-sm bg-white/5 px-2 py-1 text-sm text-gray-100">
                     Mern Stack Developer
